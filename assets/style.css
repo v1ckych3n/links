@@ -1,14 +1,24 @@
+/* typeface files */
 @font-face {
-    font-family: 
+    font-family: Migra Extralight;
+    src: url(fonts/Migra-Extralight);
 }
 
+@font-face {
+    font-family: Migra Italic;
+    src: url(fonts/MigraItalic-ExtralightItalic.ttf);
+}
+
+/* variables */
 :root {
     --font-size: 24px;
+    --display-font: Migra Extralight;
 }
 
 
 h1 {
-    font-size: calc(var(--font-size) * 3);
+    font-size: calc(var(--font-size) * 6);
+    font-family: Migra Italic;
 }
 
 h2 {
