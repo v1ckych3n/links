@@ -15,6 +15,10 @@
     --display-font: Migra Extralight;
 }
 
+body {
+    margin: 2rem;
+}
+
 
 h1 {
     font-size: calc(var(--font-size) * 6);
@@ -27,4 +31,8 @@ h2 {
 
 p {
     font-size: calc(var(--font-size) * .75);
+}
+
+header {
+    padding-top: 75%;
 }
