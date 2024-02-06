@@ -14,14 +14,31 @@
     src: url(fonts/PPSupplyMono-Regular.otf);
 }
 
+@font-face {
+    font-family: PP Supply Ultralight Mono;
+    src: url(fonts/PPSupplyMono-Ultralight.otf);
+}
+
 
 :root {
     --font-size: 16px;
+    --caption-font-size: 12px;
     --display-font: Migra Extralight;
     --text-font: PP Supply Mono;
-    --text-color: #c052ff;
+    --caption-font: PP Supply Ultralight Mono;
+
+
     --line-height: 150%;
     --text-padding: 2% 0;
+
+    --text-color: #c052ff;
+    --caption-color: white;
+
+    --hover-effect: ease-in-out 0.25s;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -58,15 +75,15 @@ header {
     width: 100vw;
 
     display: flex;
-    flex-direction: horizontal;
-    column-gap: 6rem;
-    align-items: baseline;
+    flex-direction: column;
+    row-gap: 3rem;
 
     /* want to make a subtle dark blur banner for images to subtlely appear */
     /* background-color: black; */
     
 }
 
+/* images */
 img {
     width: 100%;
     height: 100%;
@@ -75,6 +92,24 @@ img {
 
     position: static;
     z-index: 1;
+
+    filter:grayscale(100);
+}
+
+section:nth-child(2) img {
+    width: auto;
+    height: 30%;
+
+    position: relative;
+    left: 4rem;
+    
+}
+
+
+/* class styles */
+.h1-bullet {
+    font-size: calc(var(--font-size) * 3);
+    vertical-align: middle;
 }
 
 .background-image-container {
@@ -96,21 +131,26 @@ img {
     
     transform: scale(1.5);
 
-    position: relative;
+    position: fixed;
     left: 20%;
     top: -10%;
     z-index: -1;
 }
 
-/* class styles */
-.h1-bullet {
-    font-size: calc(var(--font-size) * 3);
-    vertical-align: middle;
+.my-name {
+    color: greenyellow;
+    position: fixed;
+    top: 0;
 }
 
-.definition-container {
-    background-color: black;
+.right-aligned-captions {
+    display: flex;
+    flex-direction: row;
+    column-gap: 35rem;
 
+    font-family: var(--caption-font);
+    font-size: var(--caption-font-size);
+    color: var(--caption-color);
 }
 
 
@@ -145,6 +185,42 @@ img {
         font-size: calc(var(--font-size) * .8);
     }
 
+    header {
+        display: flex;
+        flex-direction: row;
+        column-gap: 6rem;
+        align-items: baseline;
+    }
 
     /*images  images  images  images*/
+    section:nth-child(2) img {
+        width: 40%;
+        height: auto;
+    
+        position: relative;
+        left: 30rem;
+    }
+
+    section:nth-child(2) img:hover {
+        filter: none;
+        transition: var(--hover-effect);
+    }
+
+
+    /* class styles */
+    span.hover-filter:hover {
+        color: greenyellow;
+        transition: var(--hover-effect);
+    }
+
+    .right-aligned-captions {
+        display: flex;
+        flex-direction: row;
+        column-gap: 35rem;
+    }
+
+    /* how do I make my captions change color when I hover on the image? */
+    /* section:nth-child(2) img:hover > .right-aligned-captions {
+        color: var(--caption-color);
+    } */
 }
