@@ -22,7 +22,7 @@
 
 :root {
     --font-size: 16px;
-    --caption-font-size: 12px;
+    --caption-font-size: 16px;
     --display-font: Migra Extralight;
     --text-font: PP Supply Mono;
     --caption-font: PP Supply Ultralight Mono;
@@ -33,6 +33,7 @@
 
     --text-color: #c052ff;
     --caption-color: white;
+    --accent-color: greenyellow;
 
     --hover-effect: ease-in-out 0.25s;
 }
@@ -138,7 +139,7 @@ section:nth-child(2) img {
 }
 
 .my-name {
-    color: greenyellow;
+    color: var(--accent-color);
     position: fixed;
     top: 0;
 }
@@ -148,9 +149,15 @@ section:nth-child(2) img {
     flex-direction: row;
     column-gap: 35rem;
 
-    font-family: var(--caption-font);
+    /* font-family: var(--caption-font); */
     font-size: var(--caption-font-size);
     color: var(--caption-color);
+    
+}
+
+.right-aligned-captions > div > p {
+    /* font-family: var(--caption-font); */
+    font-size: var(--caption-font-size);
 }
 
 
@@ -209,7 +216,7 @@ section:nth-child(2) img {
 
     /* class styles */
     span.hover-filter:hover {
-        color: greenyellow;
+        color: var(--accent-color);
         transition: var(--hover-effect);
     }
 
@@ -217,6 +224,11 @@ section:nth-child(2) img {
         display: flex;
         flex-direction: row;
         column-gap: 35rem;
+    }
+
+    .right-aligned-captions > div {
+        position: relative; 
+        top: -3rem;
     }
 
     /* how do I make my captions change color when I hover on the image? */
