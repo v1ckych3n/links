@@ -9,30 +9,108 @@
     src: url(fonts/MigraItalic-ExtralightItalic.ttf);
 }
 
-/* variables */
+@font-face {
+    font-family: PP Supply Mono;
+    src: url(fonts/PPSupplyMono-Regular.otf);
+}
+
+
 :root {
-    --font-size: 24px;
+    --font-size: 16px;
     --display-font: Migra Extralight;
+    --text-font: PP Supply Mono;
+    --text-color: #b047fc;
+    --line-height: 150%;
+    --display-margin: 7%;
+    --text-padding: 2% 0;
 }
 
 body {
-    margin: 2rem;
+    margin: var(--display-margin);
+    color: var(--text-color);
+    font-family: var(--text-font);
+    background-image: radial-gradient(circle, #101415, #330f5f, #181929, #080a0a);
 }
 
 
 h1 {
-    font-size: calc(var(--font-size) * 6);
+    font-size: calc(var(--font-size) * 5);
     font-family: Migra Italic;
+    color: #a024f8;
+    padding: var(--text-padding);
 }
 
 h2 {
-    font-size: calc(var(--font-size) * 1.5);
+    font-size: calc(var(--font-size) * 1.75);
+    padding: var(--text-padding);
 }
 
 p {
-    font-size: calc(var(--font-size) * .75);
+    font-size: calc(var(--font-size) * 1);
+    line-height: var(--line-height);
+    padding: var(--text-padding);
 }
 
 header {
-    padding-top: 75%;
+    position: absolute;
+    z-index: 1000;
+    margin-right: 50%;
+    bottom: 10%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+section:first-child img {
+    object-fit: cover;
+    mix-blend-mode: multiply;
+}
+
+/* class styles */
+.h1-bullet {
+    font-size: calc(var(--font-size) * 3);
+    vertical-align: middle;
+}
+
+
+
+/* TABLET MEDIA QUERY   TABLET MEDIA QUERY   TABLET MEDIA QUERY   TABLET MEDIA QUERY*/
+/* TABLET MEDIA QUERY   TABLET MEDIA QUERY   TABLET MEDIA QUERY   TABLET MEDIA QUERY*/
+/* TABLET MEDIA QUERY   TABLET MEDIA QUERY   TABLET MEDIA QUERY   TABLET MEDIA QUERY*/
+@media (min-width: 768px) {
+    :root {
+
+    }
+}
+
+
+
+
+/* DESKTOP MEDIA QUERY   DESKTOP MEDIA QUERY   DESKTOP MEDIA QUERY   DESKTOP MEDIA QUERY*/
+/* DESKTOP MEDIA QUERY   DESKTOP MEDIA QUERY   DESKTOP MEDIA QUERY   DESKTOP MEDIA QUERY*/
+/* DESKTOP MEDIA QUERY   DESKTOP MEDIA QUERY   DESKTOP MEDIA QUERY   DESKTOP MEDIA QUERY*/
+@media (min-width: 1280px) {
+    :root {
+        --font-size: 30px;
+        --line-height: 140%;
+        --display-margin: 5%;
+    }
+
+    h2 {
+        font-size: calc(var(--font-size) * 1.5);
+    }
+
+    p {
+        font-size: calc(var(--font-size) * .8);
+    }
+
+    /*images  images  images  images*/
+    section:first-child img {
+        object-fit: cover;
+        object-position: center top;
+        mix-blend-mode: multiply;
+        transform: scale(2);
+    }
 }
