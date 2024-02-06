@@ -19,30 +19,29 @@
     --font-size: 16px;
     --display-font: Migra Extralight;
     --text-font: PP Supply Mono;
-    --text-color: #b047fc;
+    --text-color: #c052ff;
     --line-height: 150%;
-    --display-margin: 7%;
     --text-padding: 2% 0;
 }
 
 body {
-    margin: var(--display-margin);
     color: var(--text-color);
     font-family: var(--text-font);
     background-image: radial-gradient(circle, #101415, #330f5f, #181929, #080a0a);
+    padding: 5%;
 }
 
 
 h1 {
     font-size: calc(var(--font-size) * 5);
     font-family: Migra Italic;
-    color: #a024f8;
-    padding: var(--text-padding);
+    color: #B026FF;
+    /* padding: var(--text-padding); */
 }
 
 h2 {
     font-size: calc(var(--font-size) * 1.75);
-    padding: var(--text-padding);
+    /* padding: var(--text-padding); */
 }
 
 p {
@@ -52,26 +51,66 @@ p {
 }
 
 header {
-    position: absolute;
+    position: fixed;
+    bottom: 50px;
     z-index: 1000;
-    margin-right: 50%;
-    bottom: 10%;
+
+    width: 100vw;
+
+    display: flex;
+    flex-direction: horizontal;
+    column-gap: 6rem;
+    align-items: baseline;
+
+    /* want to make a subtle dark blur banner for images to subtlely appear */
+    /* background-color: black; */
+    
 }
 
 img {
     width: 100%;
     height: 100%;
+
+    object-fit: cover;
+
+    position: static;
+    z-index: 1;
 }
 
-section:first-child img {
-    object-fit: cover;
+.background-image-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
     mix-blend-mode: multiply;
+
+    position: relative;
+    z-index: -1;
+}
+
+.background-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    
+    transform: scale(1.5);
+
+    position: relative;
+    left: 20%;
+    top: -10%;
+    z-index: -1;
 }
 
 /* class styles */
 .h1-bullet {
     font-size: calc(var(--font-size) * 3);
     vertical-align: middle;
+}
+
+.definition-container {
+    background-color: black;
+
 }
 
 
@@ -95,7 +134,7 @@ section:first-child img {
     :root {
         --font-size: 30px;
         --line-height: 140%;
-        --display-margin: 5%;
+        /* --display-margin: 5%; */
     }
 
     h2 {
@@ -106,11 +145,6 @@ section:first-child img {
         font-size: calc(var(--font-size) * .8);
     }
 
+
     /*images  images  images  images*/
-    section:first-child img {
-        object-fit: cover;
-        object-position: center top;
-        mix-blend-mode: multiply;
-        transform: scale(2);
-    }
 }
