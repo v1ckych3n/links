@@ -95,6 +95,13 @@ img {
     filter:grayscale(100);
 }
 
+section:first-child > iframe {
+    opacity: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 10003;
+}
+
 section:nth-child(2) img {
     width: auto;
     height: 30%;
@@ -256,10 +263,5 @@ section:nth-child(2) img {
     /* how do I make my captions change color when I hover on the image? */
     /* section:nth-child(2) img:hover > .right-aligned-captions {
         color: var(--caption-color);
-    } */
-
-    /* iframe {
-        position: static;
-        opacity: 100%;
     } */
 }
