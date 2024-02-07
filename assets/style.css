@@ -133,6 +133,10 @@ section:nth-child(2) img {
     z-index: -1;
 }
 
+.background-image-container img:hover {
+    filter: grayscale(100);
+}
+
 .my-name {
     color: var(--accent-color);
     position: fixed;
@@ -204,11 +208,19 @@ section:nth-child(2) img {
         width: 80%;
     }
 
+    img:hover {
+        filter: none;
+        transition: var(--hover-effect);
+    }
+
     section:nth-child(2) {
         margin-top: 100vh;
+
+        display: flex;
+        flex-direction: row;
+        column-gap: 32rem;
     }
     
-
     section:nth-child(2) img {
         width: 35%;
         height: auto;
@@ -217,9 +229,23 @@ section:nth-child(2) img {
         left: 30rem;
     }
 
-    section:nth-child(2) img:hover {
-        filter: none;
-        transition: var(--hover-effect);
+    section:nth-child(3) img {
+        width: 30%;
+        height: 50%;
+
+        margin-top: -5%;
+
+        display: flex;
+        flex-direction: row;
+        column-gap: 32rem;
+    }
+
+    section:nth-child(4) img {
+        width: 60%;
+
+        position: relative;
+        top: -10rem;
+        left: 40%;
     }
 
 
@@ -229,18 +255,13 @@ section:nth-child(2) img {
         transition: var(--hover-effect);
     }
 
-    .right-aligned-captions {
-        display: flex;
-        flex-direction: row;
-        column-gap: 32rem;
-    }
-
     /* how do I make my captions change color when I hover on the image? */
     /* section:nth-child(2) img:hover > .right-aligned-captions {
         color: var(--caption-color);
     } */
 
     iframe {
-        opacity: 30%;
+        position: static;
+        opacity: 100%;
     }
 }
