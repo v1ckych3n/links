@@ -165,9 +165,7 @@ section:nth-child(2) img {
 /* TABLET MEDIA QUERY   TABLET MEDIA QUERY   TABLET MEDIA QUERY   TABLET MEDIA QUERY*/
 /* TABLET MEDIA QUERY   TABLET MEDIA QUERY   TABLET MEDIA QUERY   TABLET MEDIA QUERY*/
 @media (min-width: 768px) {
-    :root {
-
-    }
+    
 
 
     section:nth-child(2) img {
@@ -260,8 +258,8 @@ section:nth-child(2) img {
         color: var(--caption-color);
     } */
 
-    iframe {
+    /* iframe {
         position: static;
         opacity: 100%;
-    }
+    } */
 }
