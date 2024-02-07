@@ -46,7 +46,7 @@ body {
     color: var(--text-color);
     font-family: var(--text-font);
     background-image: radial-gradient(circle, #101415, #330f5f, #181929, #080a0a);
-    padding: 5%;
+    margin: 5%;
 }
 
 
@@ -72,8 +72,6 @@ header {
     position: fixed;
     bottom: 50px;
     z-index: 1000;
-
-    width: 100vw;
 
     display: flex;
     flex-direction: column;
@@ -119,9 +117,6 @@ section:nth-child(2) img {
     overflow: hidden;
     position: fixed;
     mix-blend-mode: multiply;
-
-    position: relative;
-    z-index: -1;
 }
 
 .background-image-container img {
@@ -134,7 +129,7 @@ section:nth-child(2) img {
 
     position: fixed;
     left: 20%;
-    top: -10%;
+    top: -25%;
     z-index: -1;
 }
 
@@ -169,6 +164,15 @@ section:nth-child(2) img {
     :root {
 
     }
+
+
+    section:nth-child(2) img {
+        width: 40%;
+        height: auto;
+
+        position: relative;
+        left: 4rem;
+    
 }
 
 
@@ -197,11 +201,16 @@ section:nth-child(2) img {
         flex-direction: row;
         column-gap: 6rem;
         align-items: baseline;
+        width: 80%;
     }
 
-    /*images  images  images  images*/
+    section:nth-child(2) {
+        margin-top: 100vh;
+    }
+    
+
     section:nth-child(2) img {
-        width: 40%;
+        width: 35%;
         height: auto;
     
         position: relative;
@@ -223,16 +232,15 @@ section:nth-child(2) img {
     .right-aligned-captions {
         display: flex;
         flex-direction: row;
-        column-gap: 35rem;
-    }
-
-    .right-aligned-captions > div {
-        position: relative; 
-        top: -3rem;
+        column-gap: 32rem;
     }
 
     /* how do I make my captions change color when I hover on the image? */
     /* section:nth-child(2) img:hover > .right-aligned-captions {
         color: var(--caption-color);
     } */
+
+    iframe {
+        opacity: 30%;
+    }
 }
