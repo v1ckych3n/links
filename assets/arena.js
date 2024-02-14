@@ -4,6 +4,8 @@ let markdownIt = document.createElement('script')
 markdownIt.src = 'https://cdn.jsdelivr.net/npm/markdown-it@14.0.0/dist/markdown-it.min.js'
 document.head.appendChild(markdownIt)
 
+
+
 // Okay, Are.na stuff!
 let channelSlug = 'dystopia-szw6q7kh94s' // The “slug” is just the end of the URL
 
@@ -34,7 +36,6 @@ let renderBlock = (block) => {
 	// Links!
 	if (block.class == 'Link') {
 		let linkItem =
-			// insert HTML element in the JavaScript //
 			`
 			<li>
 				<p><em>Link</em></p>

@@ -141,6 +141,19 @@ img {
     display: none;
 }
 
+/* JavaScript   JavaScript   JavaScript   JavaScript   JavaScript   JavaScript   JavaScript */
+/* JavaScript   JavaScript   JavaScript   JavaScript   JavaScript   JavaScript   JavaScript */
+/* JavaScript   JavaScript   JavaScript   JavaScript   JavaScript   JavaScript   JavaScript */
+.arena-description {
+    color: var(--caption-color);
+    position: relative;
+    z-index: 10000;
+
+    font-size: 12px;
+}
+
+
+
 
 
 /* TABLET MEDIA QUERY   TABLET MEDIA QUERY   TABLET MEDIA QUERY   TABLET MEDIA QUERY*/
