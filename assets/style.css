@@ -1,4 +1,6 @@
 /* typeface files */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 @font-face {
     font-family: Migra Extralight;
     src: url(fonts/Migra-Extralight);
@@ -9,23 +11,13 @@
     src: url(fonts/MigraItalic-ExtralightItalic.ttf);
 }
 
-@font-face {
-    font-family: PP Supply Mono;
-    src: url(fonts/PPSupplyMono-Regular.otf);
-}
-
-@font-face {
-    font-family: PP Supply Ultralight Mono;
-    src: url(fonts/PPSupplyMono-Ultralight.otf);
-}
-
 
 :root {
     --font-size: 16px;
     --caption-font-size: 16px;
     --display-font: Migra Extralight;
-    --text-font: PP Supply Mono;
-    --caption-font: PP Supply Ultralight Mono;
+    --text-font: IBM Plex Mono;
+    --caption-font: IBM Plex Mono;
 
 
     --line-height: 150%;
