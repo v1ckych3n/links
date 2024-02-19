@@ -18,7 +18,7 @@
     --tertiary-color: white;
 
     --hover-effect: ease-in-out 0.3s;
-    --gap: 1rem;
+    --gap: 1.5rem;
     --outline-stroke: var(--primary-color) 1px solid;
 }
 
@@ -121,7 +121,7 @@ main {
 
 .block-fit {
     outline: var(--outline-stroke);
-    /* background-color: var(--primary-color); */
+    background-color: var(--primary-color);
 
     width: 100%;
     height: 100%;
