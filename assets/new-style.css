@@ -120,7 +120,10 @@ main {
 .block-fit {
     /* background-color: white; */
     outline: var(--outline-stroke);
-    background-color: tomato;
+    background-color: var(--primary-color);
+    position: relative;
+    z-index: -2;
+    mix-blend-mode:luminosity;
 }
 
 .block-fit img {
@@ -129,13 +132,14 @@ main {
     object-fit: cover;
     object-position: right center;
 
-    filter: grayscale(100);
     position: relative;
     z-index: -1;
+
+    /* mix-blend-mode:luminosity; */
 }
 
 .block-fit img:hover {
-    filter: grayscale(0);
+    mix-blend-mode: normal;
     transition: var(--hover-effect);
 }
 
