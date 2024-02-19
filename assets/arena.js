@@ -37,7 +37,6 @@ let renderBlock = (block) => {
 	if (block.class == 'Link') {
 
 		/* for some reason, if the link JavaScript function is deleted then more images will show??? */
-		console.log(block)
 		let linkItem =
 			`
 			<li class="block-fit">
@@ -88,7 +87,6 @@ let renderBlock = (block) => {
 		// Uploaded videos!
 		if (attachment.includes('video')) {
 			// …still up to you, but we’ll give you the `video` element:
-			console.log(block)
 			let videoItem =
 				`
 				<li class="block-fit>
@@ -125,7 +123,7 @@ let renderBlock = (block) => {
 				`
 				<li class="block-fit">
 					<p><em>Audio</em></p>
-					<audio controls src="${ block.attachment.url }"></video>
+					<audio controls src="${ block.attachment.url }"></audio>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
