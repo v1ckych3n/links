@@ -13,7 +13,6 @@ let channelSlug = 'dystopia-szw6q7kh94s' // The “slug” is just the end of th
 let placeChannelInfo = (data) => {
 	// Target some elements in your HTML:
 	let channelTitle = document.getElementById('channel-title')
-    console.log(channelTitle)
 	let channelDescription = document.getElementById('channel-description')
 	// let channelCount = document.getElementById('channel-count')
 	// let channelLink = document.getElementById('channel-link')
