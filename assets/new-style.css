@@ -33,7 +33,7 @@ html {
 
 
 h1 {
-    font-size: calc(var(--font-size) * 10);
+    font-size: calc(var(--font-size) * 8);
     text-transform: uppercase;
     font-family: var(--heading-font);
 }
@@ -50,13 +50,17 @@ em {
 
 .fixed-banner {
     width: 100vw;
-    min-height: 40vh;
+    min-height: 30vh;
 
     padding: 2% 3%;
 
     position: fixed;
     bottom: 0;
     background: var(--background-color);
+}
+
+.fixed-banner {
+    outline: var(--outline-stroke);
 }
 
 .outline-container {
@@ -82,8 +86,17 @@ em {
     grid-template-rows: 1fr 1fr;
 }
 
-.right-side_outline-container img {
+.right-side_outline-container div {
+    background-color: var(--primary-color);
     outline: var(--outline-stroke);
+}
+
+.right-side_outline-container img {
+    mix-blend-mode: darken;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
 }
 
 .container {
