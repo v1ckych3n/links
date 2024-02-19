@@ -3,7 +3,7 @@
 
 @font-face {
     font-family: PP Formula;
-    src: url(fonts/PPFormula-Medium.otf);
+    src: url(/fonts/PPFormula-NarrowSemibold.otf);
 }
 
 :root {
@@ -30,7 +30,7 @@ html {
 }
 
 h1 {
-    font-size: calc(var(--font-size) * 5);
+    font-size: calc(var(--font-size) * 15);
     text-transform: uppercase;
     font-family: var(--heading-font);
 }
@@ -43,11 +43,16 @@ h1 {
 
 .fixed-banner {
     width: 100vw;
-    height: 40vh;
+    min-height: 40vh;
 
-    padding: 5%;
+    padding: 2% 5%;
 
     position: fixed;
     bottom: 0;
     background: var(--background-color);
+}
+
+.h1-bullet {
+    font-size: calc(var(--font-size) * 3);
+    vertical-align: middle;
 }

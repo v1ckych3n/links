@@ -12,12 +12,19 @@
 
     <body>
 
-        <header>
-            <h1 id="channel-title">
-                <span class="hover-filter"><a href="#dsy">dys</a></span><span class="h1-bullet">&#8226;</span></span>
+        <div class="disappear">
+            <h1 id="channel-title"></h1>
+            <p><a id="channel-link"></a></p>
+            <section id="channel-description"></section>
+        </div>
+
+        <header class="fixed-banner">
+            <h1>
+                <span>dys</span>dystopia
+                <!-- <span class="hover-filter"><a href="#dsy">dys<span class="h1-bullet">&#8226;</span></a></span></span>
                 <span class="hover-filter">to<span class="h1-bullet">&#8226;</span></span>
                 <span class="hover-filter">pi<span class="h1-bullet">&#8226;</span></span>
-                <span class="hover-filter">a</span>
+                <span class="hover-filter">a</span> -->
             </h1>
             
             <div>
@@ -35,9 +42,8 @@
 
         <main>
             <section class="container">
-                <ul id="channel-blocks">
-                    
-                </ul>
+                <ul id="channel-blocks"></ul>
+                <p class="disappear"><span id="channel-count"></span>blocks</p>
             </section>
         </main>
 
