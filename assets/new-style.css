@@ -17,7 +17,7 @@
     --secondary-color: greenyellow;
     --tertiary-color: white;
 
-    --hover-effect: ease-in-out 0.25s;
+    --hover-effect: ease-in-out 0.3s;
     --gap: 1rem;
     --outline-stroke: var(--primary-color) 1px solid;
 }
@@ -60,6 +60,7 @@ main {
 
     position: fixed;
     bottom: 0;
+    z-index: 2;
     background: var(--background-color);
 }
 
@@ -69,8 +70,6 @@ main {
 
 .outline-container {
     outline: var(--outline-stroke);
-    width: 100%;
-
     display: flex;
     flex-direction: row;
 }
@@ -115,32 +114,32 @@ main {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--gap);
+
+    position: relative;
+    z-index: 1;
 }
 
 .block-fit {
-    /* background-color: white; */
     outline: var(--outline-stroke);
-    background-color: var(--primary-color);
-    position: relative;
-    z-index: -2;
-    mix-blend-mode:luminosity;
+    /* background-color: var(--primary-color); */
+
+    width: 100%;
+    height: 100%;
 }
 
 .block-fit img {
     width: 100%;
-    height: 43vh;
+    height: 45vh;
+    margin: 0;
     object-fit: cover;
     object-position: right center;
 
-    position: relative;
-    z-index: -1;
-
-    /* mix-blend-mode:luminosity; */
+    mix-blend-mode:luminosity;
 }
 
 .block-fit img:hover {
     mix-blend-mode: normal;
-    transition: var(--hover-effect);
+    transition: ease-in-out 0.5s;
 }
 
 .block--text {
