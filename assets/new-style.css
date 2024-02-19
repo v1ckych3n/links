@@ -1,0 +1,23 @@
+/* typeface files */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+    /* font styles */
+    --font-size: 16px;
+
+    /* color styles */
+    --background-color: #000000;
+    --primary-color: #c052ff;
+    --secondary-color: greenyellow;
+    --tertiary-color: white;
+
+    --hover-effect: ease-in-out 0.25s;
+}
+
+html {
+    font-family: IBM PLex Mono;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+
+    scroll-behavior: smooth;
+}

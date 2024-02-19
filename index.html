@@ -4,21 +4,27 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link href="assets/style.css" rel="stylesheet">
+		<!-- <link href="assets/style.css" rel="stylesheet"> -->
+        <link href="assets/new-style.css" rel="stylesheet">
         <link href="assets/reset.css" rel="stylesheet">
-        <script defer src="assets/arena.js"></script>
+        <!-- <script defer src="assets/arena.js"></script> -->
+        <script defer src="assets/new-arena.js"></script>
     </head>
     <body>
 
         <header>
-            <h1 id="channel-title" class="disappear"></h1>
+            <h1 id="channel-title">
+                <span class="hover-filter"><a href="#dsy">dys</a></span><span class="h1-bullet">&#8226;</span></span><span class="hover-filter">to<span class="h1-bullet">&#8226;</span></span><span class="hover-filter">pi<span class="h1-bullet">&#8226;</span></span><span class="hover-filter">a</span>
+            </h1>
+
+            <!-- can't seem to get my channel-description to show -->
+            <aside id="channel-description"></aside>
+
+
 			<p class="disappear"><a id="channel-link"></a></p>
-            <section id="channel-description" class="arena-description"></section>
+            
             <div class="definition-container">
                 <div>
-                    <h1>
-                        <span class="hover-filter"><a href="#dsy">dys</a></span><span class="h1-bullet">&#8226;</span></span><span class="hover-filter">to<span class="h1-bullet">&#8226;</span></span><span class="hover-filter">pi<span class="h1-bullet">&#8226;</span></span><span class="hover-filter">a</span>
-                    </h1>
                     <h2>/dis'tōpēǝ/</h2>
                 </div>
                 <div>
@@ -31,13 +37,6 @@
         </header>
 
         <main>
-
-            <!-- need to redo the backgroun image container to make it make sense -->
-            <section class="background-image-container">
-                <img src="content/videos/dystopia-head.gif" alt="floating and melting animated head.">
-
-                <!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2hfFFxHRf58Fiavw0VjGSE?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
-            </section>
             <section>
                 <!-- <h2>All Blocks</h2> -->
                 <ul id="channel-blocks"></ul>

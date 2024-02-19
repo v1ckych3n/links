@@ -11,7 +11,7 @@
     src: url(fonts/MigraItalic-ExtralightItalic.ttf);
 }
 
-
+                                                     
 :root {
     --font-size: 16px;
     --caption-font-size: 16px;
@@ -152,15 +152,6 @@ img {
 /* TABLET MEDIA QUERY   TABLET MEDIA QUERY   TABLET MEDIA QUERY   TABLET MEDIA QUERY*/
 /* TABLET MEDIA QUERY   TABLET MEDIA QUERY   TABLET MEDIA QUERY   TABLET MEDIA QUERY*/
 @media (min-width: 768px) {
-    
-
-
-    section:nth-child(2) img {
-        width: 40%;
-        height: auto;
-
-        position: relative;
-        left: 4rem;
     
 }
 
