@@ -45,7 +45,7 @@ h1 {
     width: 100vw;
     min-height: 40vh;
 
-    padding: 2% 5%;
+    padding: 2% 3%;
 
     position: fixed;
     bottom: 0;
@@ -53,6 +53,11 @@ h1 {
 }
 
 .h1-bullet {
-    font-size: calc(var(--font-size) * 3);
+    font-size: calc(var(--font-size) * 6);
     vertical-align: middle;
+}
+
+.hover-effect:hover {
+    color: var(--secondary-color);
+    transition: var(--hover-effect);
 }
