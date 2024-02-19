@@ -38,28 +38,27 @@ let renderBlock = (block) => {
 
 		/* for some reason, if the link JavaScript function is deleted then more images will show??? */
 
-		let linkItem =
-			`
-			<li class="block-fit">
-				<p><em>Link</em></p>
-				<picture>
-					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
-					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
-					<img src="${ block.image.original.url }">
-				</picture>
-				// <img src="${ block.embed.html }">
-				<h3>${ block.title }</h3>
-				${ block.description_html }
-				<p><a href="${ block.source.url }">See the original ↗</a></p>
-			</li>
-			`
-		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
+		// let linkItem =
+		// 	`
+		// 	<li class="block-fit">
+		// 		<p><em>Link</em></p>
+		// 		<picture>
+		// 			<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
+		// 			<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
+		// 			<img src="${ block.image.large.url }">
+		// 		</picture>
+		// 		// <img src="${ block.embed.html }">
+		// 		<h3>${ block.title }</h3>
+		// 		${ block.description_html }
+		// 		<p><a href="${ block.source.url }">See the original ↗</a></p>
+		// 	</li>
+		// 	`
+		// channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
 
 	// Images!
 	else if (block.class == 'Image') {
 		// …up to you!
-		console.log(block)
 		let imageItem = 
 			`
 			<li class="block-fit">
@@ -75,13 +74,14 @@ let renderBlock = (block) => {
 	// Text!
 	else if (block.class == 'Text') {
 		// …up to you!
-
 		let textItem =
+		/* can't seem to pull in my text block */
 			`
-			<li class="block-fit>
+			<li class="block-fit block--text">
 				<blockquote>
-				<p><em>Text</em></p>
-				${block.content_html}
+					<p><em>Text</em></p>
+					<img src="${block.content.content_html}">
+				</blockquote>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend',textItem)
@@ -96,9 +96,9 @@ let renderBlock = (block) => {
 			// …still up to you, but we’ll give you the `video` element:
 			let videoItem =
 				`
-				<li class="block block-video>
+				<li class="block-fit>
 					<p><em>Video</em></p>
-					<src="${ block.attachment.url }">
+					<src="${ block.attachment.url }"></src>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
@@ -110,10 +110,10 @@ let renderBlock = (block) => {
 		// Uploaded PDFs!
 		else if (attachment.includes('pdf')) {
 			// …up to you!
-
+			console.log(block)
 			let pdfItem = 
 				`
-				<li>
+				<li class="block-fit>
 					<p><em>PDF</em></p>
 					${block.attachment.url}
 				</li>
@@ -188,12 +188,12 @@ let renderUser = (user, container) => { // You can have multiple arguments for a
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
 	.then((response) => response.json()) // Return it as JSON data
 	.then((data) => { // Do stuff with the data
-		console.log(data) // Always good to check your response!
+		// console.log(data) // Always good to check your response!
 		placeChannelInfo(data) // Pass the data to the first function
 
 		// Loop through the `contents` array (list), backwards. Are.na returns them in reverse!
 		data.contents.reverse().forEach((block) => {
-			console.log(block) // The data for a single block
+			// console.log(block) // The data for a single block
 			renderBlock(block) // Pass the single block data to the render function
 		})
 

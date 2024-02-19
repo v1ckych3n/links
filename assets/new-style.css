@@ -81,6 +81,10 @@ em {
     object-fit: fill;
 }
 
+.block--text {
+    color: tomato;
+}
+
 .h1-bullet {
     font-size: calc(var(--font-size) * 6);
     vertical-align: middle;
