@@ -99,7 +99,8 @@ main {
 .right-side_outline-container img {
     mix-blend-mode: darken;
     width: 100%;
-    /* height: 100%; */
+    /* how do i cut off the bottom portion */
+    height: 100%;
     object-fit: cover;
     
 }
@@ -119,6 +120,7 @@ main {
 .block-fit {
     /* background-color: white; */
     outline: var(--outline-stroke);
+    background-color: tomato;
 }
 
 .block-fit img {
