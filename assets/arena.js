@@ -57,7 +57,7 @@ let renderBlock = (block) => {
 
 		let imageItem = 
 			`
-			<li>
+			<li class="small">
 				<p><em>Image</em></p>
 				<picture>
 					<img src="${block.image.original.url }">
