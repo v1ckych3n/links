@@ -38,33 +38,35 @@ let renderBlock = (block) => {
 
 		/* for some reason, if the link JavaScript function is deleted then more images will show??? */
 
-		// let linkItem =
-		// 	`
-		// 	<li>
-		// 		<picture>
-		// 			<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
-		// 			<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
-		// 			<img src="${ block.image.original.url }">
-		// 		</picture>
-		// 		<img src="${ block.embed.html }">
-		// 		<h3>${ block.title }</h3>
-		// 		<p><a href="${ block.source.url }">See the original ↗</a></p>
-		// 	</li>
-		// 	`
-		// channelBlocks.insertAdjacentHTML('beforeend', linkItem)
+		let linkItem =
+			`
+			<li class="block-fit">
+				<p><em>Link</em></p>
+				<picture>
+					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
+					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
+					<img src="${ block.image.original.url }">
+				</picture>
+				// <img src="${ block.embed.html }">
+				<h3>${ block.title }</h3>
+				${ block.description_html }
+				<p><a href="${ block.source.url }">See the original ↗</a></p>
+			</li>
+			`
+		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
 
 	// Images!
 	else if (block.class == 'Image') {
 		// …up to you!
-
+		console.log(block)
 		let imageItem = 
 			`
-			<li>
-				<picture>
+			<li class="block-fit">
+				<figure>
 					<p><em>Image</em></p>
-					<img src="${block.image.original.url }">
-				</picture>
+					<img src="${block.image.large.url }">
+				</figure>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend',imageItem)
@@ -74,13 +76,15 @@ let renderBlock = (block) => {
 	else if (block.class == 'Text') {
 		// …up to you!
 
-		// let textItem =
-		// 	`
-		// 	<li>
-		// 		${block.image.url}
-		// 	</li>
-		// 	`
-		// channelBlocks.insertAdjacentHTML('beforeend',textItem)
+		let textItem =
+			`
+			<li class="block-fit>
+				<blockquote>
+				<p><em>Text</em></p>
+				${block.content_html}
+			</li>
+			`
+		channelBlocks.insertAdjacentHTML('beforeend',textItem)
 	}
 
 	// Uploaded (not linked) media…
@@ -92,7 +96,7 @@ let renderBlock = (block) => {
 			// …still up to you, but we’ll give you the `video` element:
 			let videoItem =
 				`
-				<li>
+				<li class="block block-video>
 					<p><em>Video</em></p>
 					<src="${ block.attachment.url }">
 				</li>
@@ -142,7 +146,7 @@ let renderBlock = (block) => {
 			let linkedVideoItem =
 				`
 				<li>
-					<p><em>Video</em></p>
+					<p><em>Linked Video</em></p>
 					${ block.embed.html }
 				</li>
 				`
