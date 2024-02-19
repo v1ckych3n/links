@@ -35,20 +35,23 @@ let renderBlock = (block) => {
 
 	// Links!
 	if (block.class == 'Link') {
-		let linkItem =
-			`
-			<li>
-				<picture>
-					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
-					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
-					<img src="${ block.image.original.url }">
-				</picture>
-				<img src="${ block.embed.html }">
-				<h3>${ block.title }</h3>
-				<p><a href="${ block.source.url }">See the original ↗</a></p>
-			</li>
-			`
-		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
+
+		/* for some reason, if the link JavaScript function is deleted then more images will show??? */
+
+		// let linkItem =
+		// 	`
+		// 	<li>
+		// 		<picture>
+		// 			<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
+		// 			<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
+		// 			<img src="${ block.image.original.url }">
+		// 		</picture>
+		// 		<img src="${ block.embed.html }">
+		// 		<h3>${ block.title }</h3>
+		// 		<p><a href="${ block.source.url }">See the original ↗</a></p>
+		// 	</li>
+		// 	`
+		// channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
 
 	// Images!
@@ -57,14 +60,11 @@ let renderBlock = (block) => {
 
 		let imageItem = 
 			`
-			<li class="small">
-				<p><em>Image</em></p>
+			<li>
 				<picture>
+					<p><em>Image</em></p>
 					<img src="${block.image.original.url }">
 				</picture>
-				<h3>${ block.title }</h3>
-				${ block.description_html }
-				<p><a href="${ block.source.url }">See the original </a></p/
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend',imageItem)
@@ -73,6 +73,14 @@ let renderBlock = (block) => {
 	// Text!
 	else if (block.class == 'Text') {
 		// …up to you!
+
+		// let textItem =
+		// 	`
+		// 	<li>
+		// 		${block.image.url}
+		// 	</li>
+		// 	`
+		// channelBlocks.insertAdjacentHTML('beforeend',textItem)
 	}
 
 	// Uploaded (not linked) media…
@@ -86,10 +94,11 @@ let renderBlock = (block) => {
 				`
 				<li>
 					<p><em>Video</em></p>
-					<video controls src="${ block.attachment.url }"></video>
+					<src="${ block.attachment.url }">
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
+
 			// More on video, like the `autoplay` attribute:
 			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
 		}
@@ -97,6 +106,15 @@ let renderBlock = (block) => {
 		// Uploaded PDFs!
 		else if (attachment.includes('pdf')) {
 			// …up to you!
+
+			let pdfItem = 
+				`
+				<li>
+					<p><em>PDF</em></p>
+					${block.attachment.url}
+				</li>
+				`
+			channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
 		}
 
 		// Uploaded audio!
@@ -124,7 +142,7 @@ let renderBlock = (block) => {
 			let linkedVideoItem =
 				`
 				<li>
-					<p><em>Linked Video</em></p>
+					<p><em>Video</em></p>
 					${ block.embed.html }
 				</li>
 				`
@@ -135,6 +153,12 @@ let renderBlock = (block) => {
 		// Linked audio!
 		else if (embed.includes('rich')) {
 			// …up to you!
+			`
+			<li>
+				<p><em>PDF</em></p>
+				${block.embed.html}
+			</li>
+			`
 		}
 	}
 }

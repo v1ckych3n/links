@@ -29,10 +29,27 @@ html {
     scroll-behavior: smooth;
 }
 
+main {
+    /* work on separating the top from the bottom fixed banner */
+    width: 100vw;
+    padding: 2% 3%;
+    
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: stretch;
+
+}
+
 h1 {
-    font-size: calc(var(--font-size) * 15);
+    font-size: calc(var(--font-size) * 10);
     text-transform: uppercase;
     font-family: var(--heading-font);
+}
+
+em {
+    font-style: italic;
 }
 
 
@@ -50,6 +67,10 @@ h1 {
     position: fixed;
     bottom: 0;
     background: var(--background-color);
+}
+
+.fixed-banner > h1 + div {
+    width: 60vw;
 }
 
 .h1-bullet {
