@@ -37,23 +37,17 @@ let renderBlock = (block) => {
 	if (block.class == 'Link') {
 
 		/* for some reason, if the link JavaScript function is deleted then more images will show??? */
-
-		// let linkItem =
-		// 	`
-		// 	<li class="block-fit">
-		// 		<p><em>Link</em></p>
-		// 		<picture>
-		// 			<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
-		// 			<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
-		// 			<img src="${ block.image.large.url }">
-		// 		</picture>
-		// 		// <img src="${ block.embed.html }">
-		// 		<h3>${ block.title }</h3>
-		// 		${ block.description_html }
-		// 		<p><a href="${ block.source.url }">See the original ↗</a></p>
-		// 	</li>
-		// 	`
-		// channelBlocks.insertAdjacentHTML('beforeend', linkItem)
+		console.log(block)
+		let linkItem =
+			`
+			<li class="block-fit">
+				<p><em>Link</em></p>
+				<figure>
+					<img src="${ block.image.large.url }">
+				</figure>
+			</li>
+			`
+		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
 
 	// Images!
@@ -80,7 +74,7 @@ let renderBlock = (block) => {
 			<li class="block-fit block--text">
 				<blockquote>
 					<p><em>Text</em></p>
-					<img src="${block.content.content_html}">
+					${block.content_html}
 				</blockquote>
 			</li>
 			`
@@ -94,11 +88,12 @@ let renderBlock = (block) => {
 		// Uploaded videos!
 		if (attachment.includes('video')) {
 			// …still up to you, but we’ll give you the `video` element:
+			console.log(block)
 			let videoItem =
 				`
 				<li class="block-fit>
 					<p><em>Video</em></p>
-					<src="${ block.attachment.url }"></src>
+					<src="${ block.embed.html }"></src>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
@@ -110,12 +105,14 @@ let renderBlock = (block) => {
 		// Uploaded PDFs!
 		else if (attachment.includes('pdf')) {
 			// …up to you!
-			console.log(block)
 			let pdfItem = 
 				`
 				<li class="block-fit>
 					<p><em>PDF</em></p>
-					${block.attachment.url}
+					<a href= ${block.attachment.url}></a>
+					<figure>
+						<img src=${block.image.large.url}></img>
+					</figure>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
@@ -126,7 +123,7 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an `audio` element:
 			let audioItem =
 				`
-				<li>
+				<li class="block-fit">
 					<p><em>Audio</em></p>
 					<audio controls src="${ block.attachment.url }"></video>
 				</li>
@@ -139,18 +136,17 @@ let renderBlock = (block) => {
 	// Linked media…
 	else if (block.class == 'Media') {
 		let embed = block.embed.type
-
 		// Linked video!
 		if (embed.includes('video')) {
 			// …still up to you, but here’s an example `iframe` element:
 			let linkedVideoItem =
 				`
-				<li>
+				<li class="block-fit">
 					<p><em>Linked Video</em></p>
 					${ block.embed.html }
 				</li>
 				`
-			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
+			channelBlocks.insertAdjacentHTML('beforeend',linkedVideoItem)
 			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 		}
 
@@ -158,8 +154,8 @@ let renderBlock = (block) => {
 		else if (embed.includes('rich')) {
 			// …up to you!
 			`
-			<li>
-				<p><em>PDF</em></p>
+			<li class="block-fit">
+				<p><em>Audio</em></p>
 				${block.embed.html}
 			</li>
 			`

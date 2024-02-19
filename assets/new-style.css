@@ -18,7 +18,8 @@
     --tertiary-color: white;
 
     --hover-effect: ease-in-out 0.25s;
-    --gap: 2rem;
+    --gap: 1rem;
+    --outline-stroke: var(--primary-color) 1px solid;
 }
 
 /* Semantic DOM styles */
@@ -58,8 +59,27 @@ em {
     background: var(--background-color);
 }
 
-.fixed-banner > h1 + div {
+.outline-container {
+    outline: var(--outline-stroke);
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.left-side_outline-container {
     width: 60vw;
+    padding: 2%;
+    outline: var(--primary-color) 1px solid;
+}
+
+.right-side_outline-container {
+    width: 100%;
+    height: 40vh;
+}
+
+.right-side_outline-container img {
+    outline: var(--outline-stroke);
 }
 
 .container {
@@ -75,14 +95,21 @@ em {
 }
 
 .block-fit {
+    /* background-color: white; */
+    outline: var(--outline-stroke);
+}
+
+.block-fit img {
     width: 100%;
-    height: auto;
-    color: tomato;
-    object-fit: fill;
+    height: 43vh;
+    object-fit: cover;
+    object-position: right center;
 }
 
 .block--text {
-    color: tomato;
+    font-size: calc(var(--font-size) * 2);
+    font-weight: bold;
+    padding: 3%;
 }
 
 .h1-bullet {
