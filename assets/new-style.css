@@ -42,6 +42,10 @@ em {
     font-style: italic;
 }
 
+main {
+    margin-bottom: 40vh;
+}
+
 
 /* class styles */
 .disappear {
@@ -123,6 +127,15 @@ em {
     height: 43vh;
     object-fit: cover;
     object-position: right center;
+
+    filter: grayscale(100);
+    position: relative;
+    z-index: -1;
+}
+
+.block-fit img:hover {
+    filter: grayscale(0);
+    transition: var(--hover-effect);
 }
 
 .block--text {
