@@ -38,14 +38,13 @@ let renderBlock = (block) => {
 		let linkItem =
 			`
 			<li>
-				<p><em>Link</em></p>
 				<picture>
 					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
 					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
 					<img src="${ block.image.original.url }">
 				</picture>
+				<img src="${ block.embed.html }">
 				<h3>${ block.title }</h3>
-				${ block.description_html }
 				<p><a href="${ block.source.url }">See the original ↗</a></p>
 			</li>
 			`
@@ -55,6 +54,22 @@ let renderBlock = (block) => {
 	// Images!
 	else if (block.class == 'Image') {
 		// …up to you!
+
+		let imageItem = 
+			`
+			<li>
+				<p><em>Image</em></p>
+				<picture>
+					<source media="(max-width: 428px)" srcset="${block.image.thumb.url}">
+					<source media="(max-width: 640px)" srcset="${ block.image.large.url}">
+					<img src="${block.image.original.url }">
+				</picture>
+				<h3>${ block.title }</h3>
+				${ block.description_html }
+				<p><a href="${ block.source.url }">See the original </a></p/
+			</li>
+			`
+		channelBlocks.insertAdjacentHTML('beforeend',imageItem)
 	}
 
 	// Text!
