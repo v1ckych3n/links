@@ -83,13 +83,12 @@ main {
 
 .right-side_outline-container {
     width: 100%;
-    height: 40vh;
+    height: 39vh;
 
-    /* display: grid;
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr; */
-
-    display:
+    grid-template-rows: 1fr 1fr;
+    gap: 0px;
 }
 
 .right-side_outline-container div {
@@ -100,7 +99,7 @@ main {
 .right-side_outline-container img {
     mix-blend-mode: darken;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     object-fit: cover;
     
 }
