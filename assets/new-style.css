@@ -149,17 +149,17 @@ main {
     background-color: var(--primary-color);
 
     width: 100%;
-    height: 100%;
+    height: 45vh;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 .block-fit img {
     width: 100%;
-    height: 45vh;
-    margin: 0;
-    object-fit: cover;
+    height: 100%;
+    object-fit: fill;
     object-position: right center;
-
-    mix-blend-mode:luminosity;
+    mix-blend-mode: luminosity;
 }
 
 .block-fit img:hover {

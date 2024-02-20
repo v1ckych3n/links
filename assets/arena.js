@@ -56,11 +56,8 @@ let renderBlock = (block) => {
 			`
 			<li class="block-fit">
 				<figure>
-					<p><em>Image</em></p>
 					<img src="${block.image.large.url }">
 				</figure>
-
-				
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend',imageItem)
