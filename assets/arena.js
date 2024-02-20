@@ -52,7 +52,6 @@ let renderBlock = (block) => {
 	// Images!
 	else if (block.class == 'Image') {
 		// …up to you!
-		console.log(block)
 		let imageItem = 
 			`
 			<li class="block block-image">
@@ -61,12 +60,10 @@ let renderBlock = (block) => {
 				</figure>
 
 				<div class="block_image-description>
-					${block.created_at}
+					${block.description_html}
 				</div>
 
-				<button class="#example">
-					Click here!
-				</button>
+				<button>Click here!</button>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend',imageItem)
@@ -204,7 +201,14 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		let channelUsers = document.getElementById('channel-users') // Show them together
 		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		renderUser(data.user, channelUsers)
-	})
 
-	// button functions 
-	let
+		// button functions 
+		let switchButtons = document.querySelectorAll('.block-image button')
+		switchButtons.forEach((switchButton) => {
+			switchButton.onclick = () => { // attach the event
+				let parentBlock = switchButton.parentElement
+				parentElement.classList.toggle('active') // toggle the class
+				// textBlock.classList.toggle(highlightClass) // toggle the class
+			}
+		})
+	})
