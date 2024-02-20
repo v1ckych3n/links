@@ -71,7 +71,6 @@ let renderBlock = (block) => {
 			`
 			<li class="block-fit block--text">
 				<blockquote>
-					<p><em>Text</em></p>
 					${block.content_html}
 				</blockquote>
 			</li>
@@ -86,6 +85,7 @@ let renderBlock = (block) => {
 		// Uploaded videos!
 		if (attachment.includes('video')) {
 			// …still up to you, but we’ll give you the `video` element:
+			channel.log(block)
 			let videoItem =
 				`
 				<li class="block-fit>
@@ -136,6 +136,7 @@ let renderBlock = (block) => {
 		// Linked video!
 		if (embed.includes('video')) {
 			// …still up to you, but here’s an example `iframe` element:
+	
 			let linkedVideoItem =
 				`
 				<li class="block-fit">
