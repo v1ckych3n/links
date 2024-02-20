@@ -39,7 +39,7 @@ let renderBlock = (block) => {
 		/* for some reason, if the link JavaScript function is deleted then more images will show??? */
 		let linkItem =
 			`
-			<li class="block-fit">
+			<li class="block">
 				<p><em>Link</em></p>
 				<figure>
 					<img src="${ block.image.large.url }">
@@ -52,12 +52,21 @@ let renderBlock = (block) => {
 	// Images!
 	else if (block.class == 'Image') {
 		// …up to you!
+		console.log(block)
 		let imageItem = 
 			`
-			<li class="block-fit">
+			<li class="block block-image">
 				<figure>
 					<img src="${block.image.large.url }">
 				</figure>
+
+				<div class="block_image-description>
+					${block.created_at}
+				</div>
+
+				<button class="#example">
+					Click here!
+				</button>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend',imageItem)
@@ -69,7 +78,7 @@ let renderBlock = (block) => {
 		let textItem =
 		/* can't seem to pull in my text block */
 			`
-			<li class="block-fit block--text">
+			<li class="block block--text">
 				<blockquote>
 					${block.content_html}
 				</blockquote>
@@ -88,7 +97,7 @@ let renderBlock = (block) => {
 			channel.log(block)
 			let videoItem =
 				`
-				<li class="block-fit>
+				<li class="block>
 					<p><em>Video</em></p>
 					<src="${ block.embed.html }"></src>
 				</li>
@@ -104,7 +113,7 @@ let renderBlock = (block) => {
 			// …up to you!
 			let pdfItem = 
 				`
-				<li class="block-fit>
+				<li class="block>
 					<p><em>PDF</em></p>
 					<a href= ${block.attachment.url}></a>
 					<figure>
@@ -120,7 +129,7 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an `audio` element:
 			let audioItem =
 				`
-				<li class="block-fit">
+				<li class="block">
 					<p><em>Audio</em></p>
 					<audio controls src="${ block.attachment.url }"></video>
 				</li>
@@ -139,7 +148,7 @@ let renderBlock = (block) => {
 	
 			let linkedVideoItem =
 				`
-				<li class="block-fit">
+				<li class="block">
 					<p><em>Linked Video</em></p>
 					${ block.embed.html }
 				</li>
@@ -152,7 +161,7 @@ let renderBlock = (block) => {
 		else if (embed.includes('rich')) {
 			// …up to you!
 			`
-			<li class="block-fit">
+			<li class="block">
 				<p><em>Audio</em></p>
 				${block.embed.html}
 			</li>
@@ -196,3 +205,6 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		renderUser(data.user, channelUsers)
 	})
+
+	// button functions 
+	let
