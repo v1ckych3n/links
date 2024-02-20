@@ -52,7 +52,8 @@ let renderBlock = (block) => {
 	// Images!
 	else if (block.class == 'Image') {
 		// …up to you!
-		let imageItem = 
+		if (block.description_html.length > 0) {
+			let imageItem = 
 			`
 			<li class="block block-image">
 				<figure>
@@ -67,6 +68,7 @@ let renderBlock = (block) => {
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend',imageItem)
+		}
 	}
 
 	// Text!
