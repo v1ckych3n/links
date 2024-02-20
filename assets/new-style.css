@@ -93,7 +93,7 @@ main {
     background-color: var(--primary-color);
     outline: var(--outline-stroke);
 }
-
+r
 .right-side_outline-container img {
     mix-blend-mode: darken;
     width: 100%;
