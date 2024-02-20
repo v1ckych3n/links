@@ -59,11 +59,11 @@ let renderBlock = (block) => {
 					<img src="${block.image.large.url }">
 				</figure>
 
-				<div class="block_image-description>
+				<div class="block_image-description">
 					${block.description_html}
 				</div>
 
-				<button>Click here!</button>
+				<button id="block-image button">Click here</button>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend',imageItem)
