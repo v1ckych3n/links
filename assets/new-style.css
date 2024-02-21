@@ -251,8 +251,9 @@ footer {
     color: var(--secondary-color);
 }
 
-button {
-    transition: var(--hover-effect);
+#click-button:active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 li {
