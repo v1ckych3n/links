@@ -232,10 +232,17 @@ footer {
 
 .block_image-description {
     display: none;
+
+    position: fixed;
+    background-color: var(--primary-color);
+
 }
 
 .block-image:active .block_image-description {
     display: block;
+
+    position: fixed;
+    background-color: var(--primary-color);
 }
 
 button {

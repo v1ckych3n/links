@@ -55,19 +55,34 @@ let renderBlock = (block) => {
 		if (block.description_html.length > 0) {
 			let imageItem = 
 			`
-			<li class="block block-image">
-				<figure>
-					<img src="${block.image.large.url }">
-				</figure>
+				<li class="block block-image">
+					<figure>
+						<img src="${block.image.large.url }">
+					</figure>
 
-				<div class="block_image-description">
-					${block.description_html}
-				</div>
+					<div class="block_image-description">
+						${block.description_html}
+					</div>
 
-				<button id="block-image button">Click here</button>
-			</li>
+					<button class="block-image button">Click here</button>
+				</li>
 			`
-		channelBlocks.insertAdjacentHTML('beforeend',imageItem)
+			channelBlocks.insertAdjacentHTML('beforeend',imageItem)
+		} else {
+			let imageItem =
+			`
+				<li class="block block-image">
+					<figure>
+						<img src="${block.image.large.url }">
+					</figure>
+
+					<div class="block_image-description">
+						${block.description_html}
+					</div>
+					
+				</li>
+			`
+			channelBlocks.insertAdjacentHTML('beforeend',imageItem)
 		}
 	}
 
