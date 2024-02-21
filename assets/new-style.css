@@ -230,15 +230,6 @@ footer {
     transition: var(--hover-effect);
 }
 
-
-.block.active .block_image-description {
-    position: absolute;
-    width: 50vw;
-    height: 50vh;
-    background-color: tomato;
-    
-}
-
 #click-button {
     cursor: pointer;
     background-color: var(--secondary-color);

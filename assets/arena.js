@@ -63,7 +63,7 @@ let renderBlock = (block) => {
 						${block.description_html}
 					</div>
 
-					<button id="click-button" class="block_image-description">Click here</button>
+					<button id="click-button">Click here</button>
 				</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend',imageItem)
@@ -200,12 +200,19 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// button functions 
 		let openButtons = document.querySelectorAll('.block button')
 		openButtons.forEach((openButton) => {
-			openButton.onclick = ( ) => { // attach the event
+			openButton.onclick = () => { // attach the event
 				let parentBlock = openButton.parentElement
 				parentBlock.classList.toggle('active') // toggle the class
 				// textBlock.classList.toggle(highlightClass) // toggle the class
 			}
 		})
 
+		let popupButtons = document.querySelectorAll('click-button')
+		popupButtons.forEach((popupButton) => {
+			popupButton.onclick = () => {
+				let parentBlock = openButton.parentElement
+				parentBlock.classList.toggle('active')
+			}
+		})
 		
 	})
