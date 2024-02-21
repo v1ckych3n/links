@@ -7,6 +7,11 @@
     font-weight: 400;
 }
 
+@font-face {
+    font-family: Hacked;
+    src: url(../fonts/Hacked-KerX.ttf);
+}
+
 :root {
     /* font styles */
     --font-size: 16px;
@@ -141,6 +146,8 @@ footer {
 
 .right-side_outline-container > div:first-child > p:nth-child(2) {
     font-size: calc(var(--font-size) * 14);
+    font-family: var(--heading-font);
+    text-align: center;
 }
 
 .right-side_outline-container > div:nth-child(2) {
@@ -208,7 +215,7 @@ footer {
 
 
 
-.block > img {
+.block img {
     width: 100%;
     height: 100%;
     aspect-ratio: 1 / 1;
@@ -275,11 +282,10 @@ footer {
 .block.active .overlay {
     display: block;
     position: fixed;
-    inset: 0;
-    top: 10;
-    right: -100;
-    width: 40px;
-    height: 40px;
+    top: 10px;
+    right: 0;
+    width: 55%;
+    height: 75%;
     background-color: tomato;
     z-index: 10;
 }
