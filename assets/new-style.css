@@ -67,16 +67,13 @@ footer {
 .fixed-banner {
     width: 100%;
     min-height: 30vh;
-
     padding: 2% 3%;
 
     position: fixed;
     bottom: 0;
     z-index: 2;
-    background: var(--background-color);
-}
-
-.fixed-banner {
+    background-color: rgb(0,0,0,.75);
+    backdrop-filter: blur(10px);
     outline: var(--outline-stroke);
 }
 
@@ -240,15 +237,14 @@ footer {
 
 .block-image:active .block_image-description {
     display: block;
-
-    position: fixed;
-    background-color: var(--primary-color);
 }
 
 button {
-    cursor: pointer;
     background-color: var(--secondary-color);
+    border-radius: 10rem;
+    cursor: pointer;
     color: var(--background-color);
+    padding: 1%;
 }
 
 
