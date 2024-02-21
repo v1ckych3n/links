@@ -44,7 +44,7 @@ let renderBlock = (block) => {
 				<figure>
 					<img src="${ block.image.large.url }">
 				</figure>
-				<button id="click-button">Click here</button>
+				<button id="click-button">&#11297;</button>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
@@ -65,7 +65,7 @@ let renderBlock = (block) => {
 						${block.description_html}
 						</div>
 					</div>
-					<button id="click-button">Click here</button>
+					<button id="click-button">&#11297;</button>
 				</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend',imageItem)
@@ -99,7 +99,7 @@ let renderBlock = (block) => {
 				<li class="block>
 					<p><em>Video</em></p>
 					<src="${ block.embed.html }"></src>
-					<button id="click-button">Click here</button>
+					<button id="click-button">&#11297;</button>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
@@ -119,7 +119,7 @@ let renderBlock = (block) => {
 					<figure>
 						<img src=${block.image.large.url}></img>
 					</figure>
-					<button id="click-button">Click here</button>
+					<button id="click-button">&#11297;</button>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
@@ -133,7 +133,7 @@ let renderBlock = (block) => {
 				<li class="block">
 					<p><em>Audio</em></p>
 					<audio controls src="${ block.attachment.url }"></video>
-					<button id="click-button">Click here</button>
+					<button id="click-button">&#11297;</button>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
@@ -153,7 +153,7 @@ let renderBlock = (block) => {
 				<li class="block">
 					<p><em>Linked Video</em></p>
 					${ block.embed.html }
-					<button id="click-button">Click here</button>
+					<button id="click-button">&#11297;</button>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend',linkedVideoItem)
@@ -167,7 +167,7 @@ let renderBlock = (block) => {
 			<li class="block">
 				<p><em>Audio</em></p>
 				${block.embed.html}
-				<button id="click-button">Click here</button>
+				<button id="click-button">&#11297;</button>
 			</li>
 			`
 		}

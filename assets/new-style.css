@@ -232,13 +232,27 @@ footer {
 
 #click-button {
     cursor: pointer;
-    background-color: var(--secondary-color);
-    border-radius: 10rem;
-    color: var(--background-color);
-    padding: 1%;
+    /* border-radius: 0rem 10rem 10rem 0rem; */
+    color: #d4b4e7;
+    padding: 1% 2%;
+    outline: var(--outline-stroke);
+    backdrop-filter: blur(10px);
+    font-size: calc(var(--font-size) * 1.5);
 
     position: absolute;
     bottom: 0;
+}
+
+#click-button:hover {
+    width: 100%;
+    text-align: center;
+    transition: var(--hover-effect);
+    outline: var(--secondary-color) 1px solid;
+    color: var(--secondary-color);
+}
+
+button {
+    transition: var(--hover-effect);
 }
 
 li {
