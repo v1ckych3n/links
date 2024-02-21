@@ -81,9 +81,9 @@ footer {
     width: 3rem;
     height: 3rem;
 
-    outline: var(--secondary-color) 1px solid;
+    outline: var(--primary-color) 1px solid;
     background-color: var(--background-color);
-    color: var(--secondary-color);
+    color: var(--primary-color);
     border-radius: 10rem;
     font-size: calc(var(--font-size) * 2);
     text-align: center;
@@ -99,6 +99,7 @@ footer {
     background-color: var(--secondary-color);
     color: var(--background-color);
     transition: var(--hover-effect);
+    outline: var(--secondary-color) 1px solid;
 }
 
 .outline-container {
@@ -229,22 +230,19 @@ footer {
     transition: var(--hover-effect);
 }
 
-.block_image-description {
-    display: none;
 
-    position: fixed;
-    background-color: var(--primary-color);
-
+.block.active .block_image-description {
+    position: absolute;
+    width: 50vw;
+    height: 50vh;
+    background-color: tomato;
+    
 }
 
-.block-image.active .block_image-description {
-    display: block;
-}
-
-button {
+#click-button {
+    cursor: pointer;
     background-color: var(--secondary-color);
     border-radius: 10rem;
-    cursor: pointer;
     color: var(--background-color);
     padding: 1%;
 
@@ -255,6 +253,7 @@ button {
 li {
     position: relative;
 }
+
 
 
 

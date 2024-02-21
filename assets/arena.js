@@ -52,8 +52,7 @@ let renderBlock = (block) => {
 	// Images!
 	else if (block.class == 'Image') {
 		// …up to you!
-		if (block.description_html.length > 0) {
-			let imageItem = 
+		let imageItem = 
 			`
 				<li class="block block-image">
 					<figure>
@@ -64,25 +63,10 @@ let renderBlock = (block) => {
 						${block.description_html}
 					</div>
 
-					<button class="block-image button">Click here</button>
+					<button id="click-button" class="block_image-description">Click here</button>
 				</li>
 			`
-			channelBlocks.insertAdjacentHTML('beforeend',imageItem)
-		} else {
-			let imageItem =
-			`
-				<li class="block block-image">
-					<figure>
-						<img src="${block.image.large.url }">
-					</figure>
-
-					<div class="block_image-description">
-						${block.description_html}
-					</div>
-				</li>
-			`
-			channelBlocks.insertAdjacentHTML('beforeend',imageItem)
-		}
+		channelBlocks.insertAdjacentHTML('beforeend',imageItem)
 	}
 
 	// Text!
@@ -213,18 +197,15 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			renderBlock(block) // Pass the single block data to the render function
 		})
 
-		// Also display the owner and collaborators:
-		let channelUsers = document.getElementById('channel-users') // Show them together
-		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
-		renderUser(data.user, channelUsers)
-
 		// button functions 
-		let switchButtons = document.querySelectorAll('.block-image button')
-		switchButtons.forEach((switchButton) => {
-			switchButton.onclick = (active) => { // attach the event
-				let clickButton = switchButton.parentElement
-				parentElement.classList.toggle('active') // toggle the class
+		let openButtons = document.querySelectorAll('.block button')
+		openButtons.forEach((openButton) => {
+			openButton.onclick = ( ) => { // attach the event
+				let parentBlock = openButton.parentElement
+				parentBlock.classList.toggle('active') // toggle the class
 				// textBlock.classList.toggle(highlightClass) // toggle the class
 			}
 		})
+
+		
 	})
