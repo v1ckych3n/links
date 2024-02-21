@@ -44,7 +44,11 @@ let renderBlock = (block) => {
 				<figure>
 					<img src="${ block.image.large.url }">
 				</figure>
-				<button id="click-button">&#11297;</button>
+				<button class="click-button">&#11297;</button>
+				<div>
+
+				</div>
+
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
@@ -56,16 +60,15 @@ let renderBlock = (block) => {
 		let imageItem = 
 			`
 				<li class="block block-image">
-					<div class="pop-up">
-						<figure>
-							<img src="${block.image.large.url }">
-						</figure>
 
-						<div class="block_image-description">
-						${block.description_html}
-						</div>
+					<figure>
+						<img src="${block.image.large.url }">
+					</figure>
+					<button class="click-button_open-overlay">&#11297;</button>
+					<div class="open-overlay">
+						<img src="${block.image.large.url }">
+						<button class=
 					</div>
-					<button id="click-button">&#11297;</button>
 				</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend',imageItem)
@@ -99,7 +102,7 @@ let renderBlock = (block) => {
 				<li class="block>
 					<p><em>Video</em></p>
 					<src="${ block.embed.html }"></src>
-					<button id="click-button">&#11297;</button>
+					<button class="click-button">&#11297;</button>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
@@ -119,7 +122,7 @@ let renderBlock = (block) => {
 					<figure>
 						<img src=${block.image.large.url}></img>
 					</figure>
-					<button id="click-button">&#11297;</button>
+					<button class="click-button">&#11297;</button>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
@@ -133,7 +136,7 @@ let renderBlock = (block) => {
 				<li class="block">
 					<p><em>Audio</em></p>
 					<audio controls src="${ block.attachment.url }"></video>
-					<button id="click-button">&#11297;</button>
+					<button class="click-button">&#11297;</button>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
@@ -153,7 +156,7 @@ let renderBlock = (block) => {
 				<li class="block">
 					<p><em>Linked Video</em></p>
 					${ block.embed.html }
-					<button id="click-button">&#11297;</button>
+					<button class="click-button">&#11297;</button>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend',linkedVideoItem)
@@ -167,7 +170,7 @@ let renderBlock = (block) => {
 			<li class="block">
 				<p><em>Audio</em></p>
 				${block.embed.html}
-				<button id="click-button">&#11297;</button>
+				<button class="click-button">&#11297;</button>
 			</li>
 			`
 		}
@@ -207,7 +210,8 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// button functions 
 
 		// need the button to open up pop-ups 
-		let openButtons = document.querySelectorAll('.block button')
+		let openButtons = document.querySelectorAll('.click-button')
+
 		openButtons.forEach((openButton) => {
 			openButton.onclick = () => { // attach the event
 				let parentBlock = openButton.parentElement
