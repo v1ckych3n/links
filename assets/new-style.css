@@ -187,11 +187,13 @@ footer {
     background-color: var(--primary-color);
 
     width: 100%;
-    height: fit-content;
+    height: 75vh;
     overflow: hidden;
 
     color: var(--primary-color);
 }
+
+
 
 .block img {
     width: 100%;
@@ -235,7 +237,7 @@ footer {
 
 }
 
-.block-image:active .block_image-description {
+.block-image.active .block_image-description {
     display: block;
 }
 
@@ -248,6 +250,10 @@ button {
 
     position: absolute;
     bottom: 0;
+}
+
+li {
+    position: relative;
 }
 
 

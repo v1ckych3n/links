@@ -79,7 +79,6 @@ let renderBlock = (block) => {
 					<div class="block_image-description">
 						${block.description_html}
 					</div>
-					
 				</li>
 			`
 			channelBlocks.insertAdjacentHTML('beforeend',imageItem)
@@ -222,8 +221,8 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// button functions 
 		let switchButtons = document.querySelectorAll('.block-image button')
 		switchButtons.forEach((switchButton) => {
-			switchButton.onclick = () => { // attach the event
-				let parentBlock = switchButton.parentElement
+			switchButton.onclick = (active) => { // attach the event
+				let clickButton = switchButton.parentElement
 				parentElement.classList.toggle('active') // toggle the class
 				// textBlock.classList.toggle(highlightClass) // toggle the class
 			}
