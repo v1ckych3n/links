@@ -62,12 +62,12 @@ let renderBlock = (block) => {
 				<li class="block block-image">
 
 					<figure>
-						<img src="${block.image.large.url }">
+						<img src="${block.image.large.url}">
 					</figure>
-					<button class="click-button_open-overlay">&#11297;</button>
-					<div class="open-overlay">
+					<button class="click-button">&#11297;</button>
+					<div class="overlay">
 						<img src="${block.image.large.url }">
-						<button class=
+						
 					</div>
 				</li>
 			`
