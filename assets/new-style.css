@@ -230,9 +230,8 @@ footer {
     transition: var(--hover-effect);
 }
 
-.click-button {
+.click-button_open {
     cursor: pointer;
-    /* border-radius: 0rem 10rem 10rem 0rem; */
     color: #d4b4e7;
     padding: 1% 2%;
     outline: var(--outline-stroke);
@@ -243,7 +242,7 @@ footer {
     bottom: 0;
 }
 
-.click-button:hover {
+.click-button_open:hover {
     width: 100%;
     text-align: center;
     transition: var(--hover-effect);
@@ -251,9 +250,17 @@ footer {
     color: var(--secondary-color);
 }
 
-.click-button:active {
+.click-button_open:active {
     background-color: var(--secondary-color);
     color: var(--primary-color);
+}
+
+.click-button_close {
+    cursor: pointer;
+
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .block .overlay {

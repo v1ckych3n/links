@@ -44,7 +44,7 @@ let renderBlock = (block) => {
 				<figure>
 					<img src="${ block.image.large.url }">
 				</figure>
-				<button class="click-button">&#11297;</button>
+				<button class="click-button_open">&#11297;</button>
 				<div>
 
 				</div>
@@ -64,7 +64,7 @@ let renderBlock = (block) => {
 					<figure>
 						<img src="${block.image.large.url}">
 					</figure>
-					<button class="click-button">&#11297;</button>
+					<button class="click-button_open">&#11297;</button>
 					<div class="overlay">
 						<img src="${block.image.large.url }">
 						
@@ -102,7 +102,7 @@ let renderBlock = (block) => {
 				<li class="block>
 					<p><em>Video</em></p>
 					<src="${ block.embed.html }"></src>
-					<button class="click-button">&#11297;</button>
+					<button class="click-button_open">&#11297;</button>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
@@ -122,7 +122,7 @@ let renderBlock = (block) => {
 					<figure>
 						<img src=${block.image.large.url}></img>
 					</figure>
-					<button class="click-button">&#11297;</button>
+					<button class="click-button_open">&#11297;</button>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
@@ -136,7 +136,7 @@ let renderBlock = (block) => {
 				<li class="block">
 					<p><em>Audio</em></p>
 					<audio controls src="${ block.attachment.url }"></video>
-					<button class="click-button">&#11297;</button>
+					<button class="click-button_open">&#11297;</button>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
@@ -156,7 +156,7 @@ let renderBlock = (block) => {
 				<li class="block">
 					<p><em>Linked Video</em></p>
 					${ block.embed.html }
-					<button class="click-button">&#11297;</button>
+					<button class="click-button_open">&#11297;</button>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend',linkedVideoItem)
@@ -170,7 +170,7 @@ let renderBlock = (block) => {
 			<li class="block">
 				<p><em>Audio</em></p>
 				${block.embed.html}
-				<button class="click-button">&#11297;</button>
+				<button class="click-button_open">&#11297;</button>
 			</li>
 			`
 		}
@@ -220,11 +220,21 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		})
 
 		// need the button to open up pop-ups 
-		let openButtons = document.querySelectorAll('.click-button')
+		let openButtons = document.querySelectorAll('.click-button_open')
 
 		openButtons.forEach((openButton) => {
 			openButton.onclick = () => { // attach the event
 				let parentBlock = openButton.parentElement
+				parentBlock.classList.toggle('active') // toggle the class
+				// textBlock.classList.toggle(highlightClass) // toggle the class
+			}
+		})
+
+		let closeButtons = document.querySelectorAll('.click-button')
+
+		closeButtons.forEach((closeButton) => {
+			closeButton.onclick = () => { // attach the event
+				let parentBlock = closeButton.parentElement
 				parentBlock.classList.toggle('active') // toggle the class
 				// textBlock.classList.toggle(highlightClass) // toggle the class
 			}
