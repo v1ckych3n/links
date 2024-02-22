@@ -209,6 +209,16 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 
 		// button functions 
 
+		let bannerButtons = document.querySelectorAll('.fixed-banner_closed-button')
+
+		bannerButtons.forEach((bannerButton) => {
+			bannerButton.onclick = () => { // attach the event
+				let parentBlock = bannerButton.parentElement
+				parentBlock.classList.toggle('active') // toggle the class
+				// textBlock.classList.toggle(highlightClass) // toggle the class
+			}
+		})
+
 		// need the button to open up pop-ups 
 		let openButtons = document.querySelectorAll('.click-button')
 
