@@ -45,10 +45,6 @@ let renderBlock = (block) => {
 					<img src="${ block.image.large.url }">
 				</figure>
 				<button class="click-button_open">&#11297;</button>
-				<div>
-
-				</div>
-
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
@@ -57,6 +53,7 @@ let renderBlock = (block) => {
 	// Images!
 	else if (block.class == 'Image') {
 		// …up to you!
+		console.log(block)
 		let imageItem = 
 			`
 				<li class="block block-image">
@@ -66,8 +63,10 @@ let renderBlock = (block) => {
 					</figure>
 					<button class="click-button_open">&#11297;</button>
 					<div class="overlay">
-						<img src="${block.image.large.url }">
-						
+						<div class="overlay_container">
+							<img src="${block.image.large.url }">
+							<div>${block.connected_at}</div>
+						</div>
 					</div>
 				</li>
 			`
@@ -226,18 +225,18 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			openButton.onclick = () => { // attach the event
 				let parentBlock = openButton.parentElement
 				parentBlock.classList.toggle('active') // toggle the class
-				// textBlock.classList.toggle(highlightClass) // toggle the class
+				parentBlock.classList.toggle('visited')
 			}
 		})
 
-		let closeButtons = document.querySelectorAll('.click-button')
+		// let closeButtons = document.querySelectorAll('.click-button')
 
-		closeButtons.forEach((closeButton) => {
-			closeButton.onclick = () => { // attach the event
-				let parentBlock = closeButton.parentElement
-				parentBlock.classList.toggle('active') // toggle the class
-				// textBlock.classList.toggle(highlightClass) // toggle the class
-			}
-		})
+		// closeButtons.forEach((closeButton) => {
+		// 	closeButton.onclick = () => { // attach the event
+		// 		let parentBlock = closeButton.parentElement
+		// 		parentBlock.classList.toggle('active') // toggle the class
+		// 		// textBlock.classList.toggle(highlightClass) // toggle the class
+		// 	}
+		// })
 		
 	})
