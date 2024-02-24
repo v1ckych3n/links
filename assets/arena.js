@@ -211,12 +211,20 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		let bannerButtons = document.querySelectorAll('.fixed-banner_closed-button')
 
 		bannerButtons.forEach((bannerButton) => {
-			bannerButton.onclick = () => { // attach the event
+			bannerButton.onclick = () => {
 				let parentBlock = bannerButton.parentElement
-				parentBlock.classList.toggle('active') // toggle the class
-				// textBlock.classList.toggle(highlightClass) // toggle the class
+				parentBlock.classList.toggle('active') 
 			}
 		})
+
+		let bannerPopups = document.querySelectorAll('.fixed-banner_closed-popup')
+
+		bannerPopups.forEach((bannerPopup)) => {
+			bannerPopup.onclick = () => {
+				let parentBlock = bannerPopup.parentElement 
+				parentBlock.classList.toggle('active')
+			}
+		}
 
 		// need the button to open up pop-ups 
 		let openButtons = document.querySelectorAll('.click-button_open')

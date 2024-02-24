@@ -225,10 +225,10 @@ footer {
     transition: var(--hover-effect);
     mix-blend-mode: luminosity;
 
-    animation: 0.2s ease-in-out 1s infinite glitchAni;
+    animation: 0.2s ease-in-out 1s infinite glitching;
 }
 
-@keyframes glitchAni {
+@keyframes glitching {
 	0% {
 		opacity: 100%;
 		transform: translate(0px, 0px);
