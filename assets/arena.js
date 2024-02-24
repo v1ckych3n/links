@@ -217,13 +217,8 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			}
 		})
 
-		let bannerPopups = document.querySelectorAll('.fixed-banner_closed-popup')
-
-		bannerPopups.forEach((bannerPopup)) => {
-			bannerPopup.onclick = () => {
-				let parentBlock = bannerPopup.parentElement 
-				parentBlock.classList.toggle('active')
-			}
+		if (popupCloseButton) {
+			popupCloseButton.onclick
 		}
 
 		// need the button to open up pop-ups 
