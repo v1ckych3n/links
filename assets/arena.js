@@ -217,6 +217,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			}
 		})
 
+
 		// need the button to open up pop-ups 
 		let openButtons = document.querySelectorAll('.click-button_open')
 
