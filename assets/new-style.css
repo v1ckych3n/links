@@ -23,10 +23,10 @@
     --main-font: IBM Plex Mono;
 
     /* color styles */
-    --background-color: #000000;
-    --primary-color: #c052ff;
-    --secondary-color: greenyellow;
-    --tertiary-color: white;
+    --background-color: #0D0208;
+    --primary-color: #00FF41;
+    --secondary-color: #E3E1D9;
+    --tertiary-color: #FE7A36;
 
     --hover-effect: ease-in-out 0.3s;
     --gap: 1.5rem;
@@ -48,13 +48,23 @@ h1 {
     text-transform: uppercase;
     font-family: var(--heading-font);
 
-    /* -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--secondary-color); */
-    /* color: var(--secondary-color); */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+p {
+    line-height: 170%;
 }
 
 em {
     font-style: italic;
+}
+
+mark {
+    outline: var(--outline-stroke);
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 footer {
@@ -185,10 +195,6 @@ footer {
     background-color: var(--secondary-color);
 }
 
-fixed-banner
-
-
-
 
 /* main content section */
 .container {
@@ -228,35 +234,6 @@ fixed-banner
     object-position: top center;
     transition: var(--hover-effect);
     mix-blend-mode: luminosity;
-
-    animation: 0.2s ease-in-out 1s infinite glitching;
-}
-
-@keyframes glitching {
-	0% {
-		opacity: 100%;
-		transform: translate(0px, 0px);
-	}
-
-    25% {
-        opacity: 100%;
-        transform: translateX(-2px);
-    }
-
-	50% {
-		opacity: 95%;
-		transform: translate(1px, 1px);
-	}
-
-    75% {
-        opacity: 100%;
-        transform: translateZ(1px);
-    }
-
-    100% {
-        opacity: 100%;
-		transform: translate(0px, 0px);
-    }
 }
 
 .block:hover {
@@ -264,13 +241,13 @@ fixed-banner
     transition: var(--hover-effect);
 }
 
-.block > figure > img:hover {
+/* .block > figure > img:hover {
     mix-blend-mode: normal;
     object-position: left bottom;
     transition: var(--hover-effect);
     
     animation: none;
-}
+} */
 
 .block--text {
     font-size: calc(var(--font-size) * 2.5);
@@ -287,7 +264,7 @@ fixed-banner
 
 .click-button_open {
     cursor: pointer;
-    color: #d4b4e7;
+    color: greenyellow;
     padding: 1% 2%;
     outline: var(--outline-stroke);
     backdrop-filter: blur(10px);
