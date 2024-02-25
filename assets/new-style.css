@@ -2,25 +2,28 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 @font-face {
-    font-family: PP Formula;
-    src: url(../fonts/PPFormula-NarrowSemibold.otf);
+    font-family: Kleemax;
+    src: url(../fonts/KleemaxDemo.otf);
 }
 
 @font-face {
-    font-family: Terminator;
-    src: url(../fonts/terminator_real_nfi.ttf);
+    font-family: Relicus-Light;
+    src: url(../fonts/RelicusDemo-LightMono.ttf);
+    weight: 300;
 }
 
 @font-face {
-    font-family: Hacked;
-    src: url(../fonts/Hacked-KerX.ttf);
+    font-family: Relicus-Regular;
+    src: url(../fonts/RelicusDemo-Mono.ttf);
+    weight: 400;
 }
+
 
 :root {
     /* font styles */
     --font-size: 16px;
-    --heading-font: Terminator;
-    --main-font: IBM Plex Mono;
+    --heading-font: Kleemax;
+    --main-font: Relicus-Regular;
 
     /* color styles */
     --background-color: #0D0208;
@@ -44,7 +47,7 @@ html {
 
 
 h1 {
-    font-size: calc(var(--font-size) * 6);
+    font-size: calc(var(--font-size) * 8);
     text-transform: uppercase;
     font-family: var(--heading-font);
 
@@ -83,7 +86,7 @@ footer {
 }
 
 .hover-effect:hover {
-    color: var(--secondary-color);
+    color: var(--tertiary-color);
     transition: var(--hover-effect);
 }
 
@@ -142,7 +145,7 @@ footer {
 .top-side_outline-container {
     width: 100%;
     padding: 2%;
-    outline: var(--primary-color) 1px solid;
+    outline: var(--outline-stroke);
 }
 
 .bottom-side_outline-container {
@@ -153,14 +156,14 @@ footer {
 }
 
 .bottom-side_outline-container > div:first-child {
-    width: 100%;
+    width: 75%;
     height: 100%;
     padding: 2%;
 }
 
 .bottom-side_outline-container > div:nth-child(2) {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 0;
 
     justify-content: center;
@@ -170,8 +173,8 @@ footer {
 }
 
 .bottom-side_outline-container > div:nth-child(2) > p:first-child {
-    font-family: var(--heading-font);
-    font-size: calc(var(--font-size) * 2.5);
+    font-size: calc(var(--font-size) * 3);
+    text-transform: uppercase;
     padding: 5%;
     color: transparent;
     height: 100%;
@@ -184,7 +187,7 @@ footer {
 }
 
 .bottom-side_outline-container > div:nth-child(2) > p:nth-child(2) {
-    font-family: PP Formula;
+    font-family: var(--heading-font);
     font-size: calc(var(--font-size) * 5);
     padding: 5%;
     height: 100%;
