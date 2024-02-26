@@ -419,16 +419,24 @@ footer {
 
 .sidebar > div:first-child {
     padding: 10%;
-    animation: ease-in-out 1s floating;
+    border-bottom: var(--outline-stroke);
+}
+
+.sidebar > div:first-child > img {
+    animation: ease-in 2s infinite floating;
 }
 
 @keyframes floating {
-    from {
+    0% {
         transform: translate(0px, 0px);
     }
 
-    to {
-        transform: translate(1px, 0px);
+    50% {
+        transform: translate(0px, 10px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
     }
 }
 
