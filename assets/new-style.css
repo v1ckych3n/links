@@ -27,9 +27,9 @@
 
     /* color styles */
     --background-color: #0D0208;
-    --primary-color: #B026FF;
+    --primary-color: #af24ff;
     --secondary-color: #E3E1D9;
-    --tertiary-color: #00FF41;
+    --tertiary-color: #00ff40;
 
     --hover-effect: ease-in-out 0.3s;
     --gap: 1.5rem;
@@ -53,6 +53,25 @@ h1 {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--primary-color);
     color: var(--primary-color);
+
+    animation: infinite glitch;
+    animation-duration: .5s;
+}
+
+@keyframes glitch {
+    0%, 100% {
+        filter: hue-rotate(0deg);
+        transform: skew(-1deg);
+        color: rbga (175, 36, 255, 1);
+      }
+      10%, 30%, 50%, 90% {
+        transform: skew(0deg);
+        color: rbga (175, 36, 255, 1);
+      }
+      40% {
+        transform: skew(-2deg);
+        color: rbga (175, 36, 255, .3);
+      }
 }
 
 h2 {
@@ -104,7 +123,7 @@ footer {
 
     position: fixed;
     bottom: 0;
-    z-index: 2;
+    z-index: 10;
     background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
     outline: var(--outline-stroke);
@@ -122,7 +141,7 @@ footer {
     background-color: var(--background-color);
     color: var(--primary-color);
     border-radius: 10rem;
-    font-size: calc(var(--font-size) * 2);
+    font-size: calc(var(--font-size) * 1.5);
     text-align: center;
     cursor: pointer;
 
@@ -131,6 +150,10 @@ footer {
     right: 0;
     margin-top: 1%;
     margin-right: 2%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .fixed-banner_closed-button:hover {
@@ -372,6 +395,41 @@ footer {
     /* work on separating the top from the bottom fixed banner */
     width: 100%;
     padding: 2% 3%;
+
+    display: flex;
+    flex-direction: row;
+    column-gap: var(--gap);
+
+    outline: var(--outline-stroke);
+}
+
+.sidebar {
+    outline: var(--outline-stroke);
+    width: fit-content;
+    height: 100%;
+    position: sticky;
+    top: 2%;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.sidebar > div:first-child {
+    padding: 10%;
+    animation: ease-in-out 1s floating;
+}
+
+@keyframes floating {
+    from {
+        transform: translate(0px, 0px);
+    }
+
+    to {
+        transform: translate(1px, 0px);
+    }
 }
 
 .block-grid {
@@ -390,7 +448,7 @@ footer {
     background-color: var(--primary-color);
 
     width: 100%;
-    height: 75vh;
+    height: fit-content;
     overflow: hidden;
 
     color: var(--primary-color);

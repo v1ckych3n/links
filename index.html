@@ -13,12 +13,10 @@
     <body>
 
         <div class="disappear">
-            <h1 id="channel-title"></h1>
             <p><a id="channel-link"></a></p>
-            <section id="channel-description"></section>
         </div>
 
-        <header id="removeBanner" class="fixed-banner">
+        <header id="myHeader" class="fixed-banner">
             <div class="outline-container" .fixed-ba>
                 <div class="top_outline-container">
                     <h1>
@@ -79,8 +77,8 @@
                         </div>
                         <p>Are you REALLY sure you want to close this?</p>
                         <div class="popup-window_buttons">
-                            <button type="button" id="popup-window-close-button_yes" onclick="closeLanding()">Yes, I am sure!</button>
-                            <button id="popup-window-close-button_no">Not REALLY</button>
+                            <button id="closeMyHeader" class="popup-window-close-button_yes">Yes, I am sure!</button>
+                            <button class="popup-window-close-button_no" onclick="closePopup()">Not REALLY</button>
                         </div>
                     </div>
                 </div>
@@ -95,11 +93,26 @@
                 function openPopup(){
                     warningPopup.classList.toggle("fixed-banner_popup-window");
                 }
+
+                function closePopup(){
+                    warningPopup.classList.remove("fixed-banner_popup-window");
+                }
             </script>
         </header>
 
         <main>
             <section class="container">
+                <div class="sidebar">
+                    <div>
+                        <img src="content/images/globe.svg" alt="world globe">
+                    </div>
+                    <div>
+                        <h2 id="channel-title"></h2>
+                    </div>
+                    <div>
+                        <p id="channel-description"></p>
+                    </div>
+                </div>
                 <ul class="block-grid" id="channel-blocks"></ul>
             </section>
         </main>
