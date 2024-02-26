@@ -18,7 +18,7 @@
             <section id="channel-description"></section>
         </div>
 
-        <header class="fixed-banner">
+        <header id="removeBanner" class="fixed-banner">
             <div class="outline-container">
                 <div class="top_outline-container">
                     <h1>
@@ -70,23 +70,38 @@
                         <p><span id="channel-count"></span></p>
                     </div>
                 </div>
-            </div>
 
-            <div class="fixed-banner_closed-button">&#10005;</div>
-
-            <div class="fixed-banner_popup-window-closed">
-                <div class="fixed-banner_popup-window">
-                    <div>
-                        <p>&#9888;</p>
-                        <h2>WARNING</h2>
-                    </div>
-                    <p>Are you REALLY sure you want to close this?</p>
-                    <div class="popup-window_buttons">
-                        <button id="popup-window-close-button_yes">Yes, I am sure!</button>
-                        <button id="popup-window-close-button_no">Not REALLY</button>
+                <div id="warningPopup" class="fixed-banner_popup-window-none">
+                    <div class="fixed-banner_popup-window">
+                        <div>
+                            <p>&#9888;</p>
+                            <h2>WARNING</h2>
+                        </div>
+                        <p>Are you REALLY sure you want to close this?</p>
+                        <div class="popup-window_buttons">
+                            <button type="button" id="popup-window-close-button_yes" onclick="closeLanding()">Yes, I am sure!</button>
+                            <button id="popup-window-close-button_no">Not REALLY</button>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div type="open" class="fixed-banner_closed-button" onclick="openPopup()">&#10005;</div>
+
+
+            <script>
+                let warningPopup = document.getElementById ("warningPopup");
+
+                function openPopup(){
+                    warningPopup.classList.toggle("fixed-banner_popup-window");
+                }
+
+                let removeBanner = document.getElementByID("removeBanner");
+
+                function closeLanding(){
+                    removeBanner.classList.toggle("active");
+                }
+            </script>
         </header>
 
         <main>

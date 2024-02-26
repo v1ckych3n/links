@@ -27,9 +27,9 @@
 
     /* color styles */
     --background-color: #0D0208;
-    --primary-color: #00FF41;
+    --primary-color: #B026FF;
     --secondary-color: #E3E1D9;
-    --tertiary-color: #FE7A36;
+    --tertiary-color: #00FF41;
 
     --hover-effect: ease-in-out 0.3s;
     --gap: 1.5rem;
@@ -110,6 +110,10 @@ footer {
     outline: var(--outline-stroke);
 }
 
+.fixed-banner.active {
+    display: none;
+}
+
 .fixed-banner_closed-button {
     width: 3rem;
     height: 3rem;
@@ -136,12 +140,8 @@ footer {
     outline: var(--secondary-color) 1px solid;
 }
 
-.fixed-banner_popup-window-closed {
+.fixed-banner_popup-window-none {
     display: none;
-}
-
-.fixed-banner_popup-window-closed.active {
-    display: block;
 }
 
 .fixed-banner_popup-window {

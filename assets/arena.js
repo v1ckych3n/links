@@ -209,7 +209,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// BUTTON FUNCTION   BUTTON FUNCTIONS   BUTTON FUNCTIONS
 
 		//landing page fixed banner buttons
-		let popupWindows = document.querySelectorAll('.fixed-banner_closed-button') 
+		let popupWindows = document.querySelectorAll('.fixed-banner_popup-window-closed  .fixed-banner_closed-button') 
 
 		popupWindows.forEach((popupWindow) => {
 			popupWindow.onclick = () => {
