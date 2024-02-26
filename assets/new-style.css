@@ -231,10 +231,6 @@ footer {
     display: none;
 }
 
-/* .fixed-banner.active #fixed-banner_popup-window {
-    display: block;
-} */
-
 .outline-container {
     outline: var(--outline-stroke);
     display: flex;
