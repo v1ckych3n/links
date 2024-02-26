@@ -19,7 +19,7 @@
         </div>
 
         <header id="removeBanner" class="fixed-banner">
-            <div class="outline-container">
+            <div class="outline-container" .fixed-ba>
                 <div class="top_outline-container">
                     <h1>
                         <span class="hover-effect"><a href="#dsy">dys<span class="h1-bullet">&#8226;</span></a></span></span><span class="hover-effect">to<span class="h1-bullet">&#8226;</span></span><span class="hover-effect">pi<span class="h1-bullet">&#8226;</span></span><span class="hover-effect">a</span>
@@ -96,10 +96,10 @@
                     warningPopup.classList.toggle("fixed-banner_popup-window");
                 }
 
-                let removeBanner = document.getElementByID("removeBanner");
+                let removeBanner = document.getElementById("removeBanner");
 
                 function closeLanding(){
-                    removeBanner.classList.toggle("active");
+                    removeBanner.classList.remove('header');
                 }
             </script>
         </header>

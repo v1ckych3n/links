@@ -209,14 +209,11 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// BUTTON FUNCTION   BUTTON FUNCTIONS   BUTTON FUNCTIONS
 
 		//landing page fixed banner buttons
-		let popupWindows = document.querySelectorAll('.fixed-banner_popup-window-closed  .fixed-banner_closed-button') 
+		let warningPopup = document.getElementById ('warningPopup')
 
-		popupWindows.forEach((popupWindow) => {
-			popupWindow.onclick = () => {
-				letparentBlock = popupWindow.parentElement
-				parentBlock.classList.toggle('active')
-			}
-		})
+        function openPopup(){
+            warningPopup.classList.toggle('.fixed-banner_popup-window')
+        }
 
 		// need the button to open up pop-ups 
 		let openButtons = document.querySelectorAll('.click-button_open')
@@ -227,15 +224,5 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 				parentBlock.classList.toggle('active') // toggle the class
 			}
 		})
-
-		// let closeButtons = document.querySelectorAll('.click-button')
-
-		// closeButtons.forEach((closeButton) => {
-		// 	closeButton.onclick = () => { // attach the event
-		// 		let parentBlock = closeButton.parentElement
-		// 		parentBlock.classList.toggle('active') // toggle the class
-		// 		// textBlock.classList.toggle(highlightClass) // toggle the class
-		// 	}
-		// })
 		
 	})

@@ -110,8 +110,8 @@ footer {
     outline: var(--outline-stroke);
 }
 
-.fixed-banner.active {
-    display: none;
+.fixed-banner-overall {
+    visibility: hidden;
 }
 
 .fixed-banner_closed-button {
