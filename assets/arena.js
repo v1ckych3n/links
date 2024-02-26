@@ -206,7 +206,17 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			renderBlock(block) // Pass the single block data to the render function
 		})
 
-		// button functions 
+		// BUTTON FUNCTION   BUTTON FUNCTIONS   BUTTON FUNCTIONS
+
+		//landing page fixed banner buttons
+		let warningPopup = 'fixed-banner_popup-window'
+		let textBlock = document.querySelector ('active')
+		let switchButton = document.querySelector('#fixedBannerButton')
+
+		switchButton.onclick = () => {
+			textBlock.classList.toggle(warningPopup)
+		}
+
 		let bannerButtons = document.querySelectorAll('.fixed-banner_closed-button')
 
 		bannerButtons.forEach((bannerButton) => {
@@ -229,7 +239,6 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			openButton.onclick = () => { // attach the event
 				let parentBlock = openButton.parentElement
 				parentBlock.classList.toggle('active') // toggle the class
-				parentBlock.classList.toggle('visited')
 			}
 		})
 
