@@ -209,11 +209,10 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// BUTTON FUNCTION   BUTTON FUNCTIONS   BUTTON FUNCTIONS
 
 		//landing page fixed banner buttons
-		let warningPopup = document.getElementById ('warningPopup')
-
-        function openPopup(){
-            warningPopup.classList.toggle('.fixed-banner_popup-window')
-        }
+		document.getElementById("closeMyHeader").addEventListener("click", function() {
+			let header = document.getElementById("myHeader");
+			header.parentNode.removeChild(header);
+		});
 
 		// need the button to open up pop-ups 
 		let openButtons = document.querySelectorAll('.click-button_open')

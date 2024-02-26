@@ -190,7 +190,7 @@ footer {
     width: 75%;
 }
 
-#popup-window-close-button_yes, #popup-window-close-button_no {
+.popup-window-close-button_yes, .popup-window-close-button_no {
     outline: var(--tertiary-color) 1px solid;
     width: 100%;
     height: 100%;
@@ -200,7 +200,7 @@ footer {
     cursor: pointer;
 }
 
-#popup-window-close-button_yes:hover, #popup-window-close-button_no:hover {
+.popup-window-close-button_yes:hover, .popup-window-close-button_no:hover {
     background-color: var(--tertiary-color);
     color: var(--background-color);
 }
