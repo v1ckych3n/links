@@ -136,6 +136,13 @@ footer {
     outline: var(--secondary-color) 1px solid;
 }
 
+.fixed-banner_popup-window-closed {
+    display: none;
+}
+
+.fixed-banner_popup-window-closed.active {
+    display: block;
+}
 
 .fixed-banner_popup-window {
     width: 50vw;
@@ -225,10 +232,6 @@ footer {
         opacity: 100%;
         transform: translate (0px, 0px);
     }
-}
-
-#popup-window-close-button_yes.active .fixed-banner {
-    display: none;
 }
 
 .outline-container {

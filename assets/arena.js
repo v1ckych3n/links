@@ -209,28 +209,14 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// BUTTON FUNCTION   BUTTON FUNCTIONS   BUTTON FUNCTIONS
 
 		//landing page fixed banner buttons
-		let warningPopup = 'fixed-banner_popup-window'
-		let textBlock = document.querySelector ('active')
-		let switchButton = document.querySelector('#fixedBannerButton')
+		let popupWindows = document.querySelectorAll('.fixed-banner_closed-button') 
 
-		switchButton.onclick = () => {
-			textBlock.classList.toggle(warningPopup)
-		}
-
-		let bannerButtons = document.querySelectorAll('.fixed-banner_closed-button')
-
-		bannerButtons.forEach((bannerButton) => {
-			bannerButton.onclick = () => {
-				let parentBlock = bannerButton.parentElement
-				parentBlock.classList.toggle('active') 
+		popupWindows.forEach((popupWindow) => {
+			popupWindow.onclick = () => {
+				letparentBlock = popupWindow.parentElement
+				parentBlock.classList.toggle('active')
 			}
 		})
-
-		let fixedBannerPopupWindow = document.querySelector('#popup-window-close-button_yes')
-
-		fixedBannerPopupWindow.onclick = () => {
-			fixedBannerPopupWindow.classList.toggle('active')
-		}
 
 		// need the button to open up pop-ups 
 		let openButtons = document.querySelectorAll('.click-button_open')
