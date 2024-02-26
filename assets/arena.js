@@ -207,7 +207,6 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		})
 
 		// button functions 
-
 		let bannerButtons = document.querySelectorAll('.fixed-banner_closed-button')
 
 		bannerButtons.forEach((bannerButton) => {
@@ -217,6 +216,11 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			}
 		})
 
+		let fixedBannerPopupWindow = document.querySelector('#popup-window-close-button_yes')
+
+		fixedBannerPopupWindow.onclick = () => {
+			fixedBannerPopupWindow.classList.toggle('active')
+		}
 
 		// need the button to open up pop-ups 
 		let openButtons = document.querySelectorAll('.click-button_open')
