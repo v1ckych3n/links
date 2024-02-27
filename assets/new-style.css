@@ -326,7 +326,7 @@ footer {
     justify-content: space-around;
 
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--primary-color);
+    -webkit-text-stroke-color: var(--secondary-color);
     color: transparent;
     height: auto;
     width: 45vw;
@@ -403,7 +403,7 @@ footer {
 
 .sidebar {
     outline: var(--outline-stroke);
-    width: fit-content;
+    /* width: fit-content; */
     height: 100%;
     position: sticky;
     top: 2%;
@@ -413,8 +413,6 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-content: center;
-
-    background-color: 
 }
 
 .sidebar > div:first-child {
@@ -438,6 +436,20 @@ footer {
     100% {
         transform: translate(0px, 0px);
     }
+}
+
+.sidebar > div:nth-child(2) > p {
+    padding: 5%;
+    padding-right: 5%;
+    font-size: calc(var(--font-size) * 1.5);
+    font-family: var(--heading-font);
+    text-transform: uppercase;
+    border-bottom: var(--outline-stroke);
+}
+
+.sidebar > div:nth-child(3) > p {
+    padding: 5%;
+    line-height: 100%;
 }
 
 .block-grid {
@@ -478,14 +490,6 @@ footer {
     transition: var(--hover-effect);
 }
 
-/* .block > figure > img:hover {
-    mix-blend-mode: normal;
-    object-position: left bottom;
-    transition: var(--hover-effect);
-    
-    animation: none;
-} */
-
 .block--text {
     font-size: calc(var(--font-size) * 2.5);
     font-weight: medium;
@@ -501,7 +505,7 @@ footer {
 
 .click-button_open {
     cursor: pointer;
-    color: greenyellow;
+    color: var(--secondary-color);
     padding: 1% 2%;
     outline: var(--outline-stroke);
     backdrop-filter: blur(10px);
@@ -516,7 +520,8 @@ footer {
     text-align: center;
     transition: var(--hover-effect);
     outline: var(--secondary-color) 1px solid;
-    color: var(--secondary-color);
+    color: var(--background-color);
+    background-color: var(--secondary-color);
 }
 
 .block div {
