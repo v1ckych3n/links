@@ -398,7 +398,7 @@ mark {
 }
 
 .sidebar {
-    outline: var(--secondary-color) 1px solid;
+    outline: var(--outline-stroke);
     /* width: fit-content; */
     height: 100%;
     position: sticky;
@@ -468,7 +468,7 @@ mark {
 }
 
 .block {
-    outline: var(--secondary-color) 1px solid;
+    outline: var(--outline-stroke);
     background-color: var(--primary-color);
 
     width: 100%;
@@ -487,24 +487,20 @@ mark {
     object-position: top center;
     transition: var(--hover-effect);
     mix-blend-mode: luminosity;
-    animation: moving 1s ease-in-out infinite;
+    animation: moving 4s ease-in-out infinite;
 }
 
 @keyframes moving {
     0% {
-        transform: translateX(0) translateY(0);
-    }
-
-    25% {
-        transform: translateX(1px) translateY(0px);
+        scale: 110%;
     }
 
     50% {
-        transform: translateX(1px) translateY(0px);
+        scale: 130%;
     }
 
     100% {
-        transform: translateX(2px) translateY(2px);
+        scale: 110%;
     }
 }
 
@@ -587,7 +583,10 @@ mark {
     padding: 2%;
     background-color: var(--secondary-color);
     color: var(--background-color);
+    cursor: pointer;
 }
+
+
 
 /* .click-button_close:hover {
     color: var(--primary-color);
@@ -820,7 +819,6 @@ li {
     }
 
     .block {
-        outline: var(--outline-stroke);
         background-color: var(--primary-color);
     
         width: 100%;
@@ -844,8 +842,9 @@ li {
     .click-button_open {
         width: fit-content;
         cursor: pointer;
-        font-size: calc(var(--font-size) * 2);
-        padding: 2% 3%;
+        font-size: calc(var(--font-size) * 1.5);
+        padding: 1% 2%;
+        outline: var(--outline-stroke);
     }
 
     .click-button_open:hover {

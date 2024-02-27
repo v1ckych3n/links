@@ -225,12 +225,21 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			header.parentNode.removeChild(header);
 		});
 
-		// need the button to open up pop-ups 
-		let openButtons = document.querySelectorAll('.click-button_open')
+		// Arena Pop-up buttons
+		let openPopups = document.querySelectorAll('.click-button_open')
 
-		openButtons.forEach((openButton) => {
-			openButton.onclick = () => { // attach the event
-				let parentBlock = openButton.parentElement
+		openPopups.forEach((openPopup) => {
+			openPopup.onclick = () => { // attach the event
+				let parentBlock = openPopup.parentElement
+				parentBlock.classList.toggle('active') // toggle the class
+			}
+		})
+
+		let closePopups = document.querySelectorAll('.click-button_close')
+
+		closePopups.forEach((closePopup) => {
+			closePopup.onclick = () => { // attach the event
+				let parentBlock = closePopup.closest('.block')
 				parentBlock.classList.toggle('active') // toggle the class
 			}
 		})
