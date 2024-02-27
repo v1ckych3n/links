@@ -556,7 +556,6 @@ mark {
 .block.active > .arena-popup {
     display: flex;
     flex-direction: column;
-    gap: var(--gap);
 }
 
 .block.active > .arena-popup > img {
@@ -564,6 +563,37 @@ mark {
     padding: 2%;
 }
 
+.block.active > .arena-popup > ul {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.block.active > .arena-popup > ul > li {
+    width: 100%; 
+    height: 100%;
+    border-right: var(--secondary-color) 1px solid;
+    padding: 2%;
+}
+
+.block.active > .arena-popup > ul > li > p {
+    text-transform: uppercase;
+}
+
+.click-button_close {
+    width: 100%;
+    text-align: center;
+    padding: 2%;
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+}
+
+/* .click-button_close:hover {
+    color: var(--primary-color);
+    transition: var(--hover-effect);
+    font-size: calc(var(--font-size) * 1.25);
+} */
 
 li {
     position: relative;

@@ -63,7 +63,21 @@ let renderBlock = (block) => {
 					<button class="click-button_open">&#11297;</button>
 					<div class="arena-popup">
 						<img src="${block.image.large.url}">
-						<p>${block.connected_at}</p>
+						<ul>
+							<li>
+								<p>connected at</p>
+								${block.connected_at}
+							</li>
+							<li>
+								<p>created at</p>
+								${block.created_at}
+							</li>
+							<li>
+								<p>connected by</p>
+								${block.connected_by_username}
+							</li>
+						</ul>
+						<button class="click-button_close">EXIT</button>
 					</div> 
 				</li>
 			`
