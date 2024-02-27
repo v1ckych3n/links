@@ -57,17 +57,14 @@ let renderBlock = (block) => {
 		let imageItem = 
 			`
 				<li class="block block-image">
-
 					<figure>
 						<img src="${block.image.large.url}">
 					</figure>
 					<button class="click-button_open">&#11297;</button>
-					<div class="overlay">
-						<div class="overlay_container">
-							<img src="${block.image.large.url }">
-							<div>${block.connected_at}</div>
-						</div>
-					</div>
+					<div class="arena-popup">
+						<img src="${block.image.large.url}">
+						<p>${block.connected_at}</p>
+					</div> 
 				</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend',imageItem)
