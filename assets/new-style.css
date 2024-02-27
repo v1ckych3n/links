@@ -28,8 +28,8 @@
     /* color styles */
     --background-color: #0D0208;
     --primary-color: rgb(175, 36, 255);
-    --secondary-color: #E3E1D9;
-    --tertiary-color: #00ff40;
+    --secondary-color: #00ff40;
+    --tertiary-color: #E3E1D9;
 
     --hover-effect: ease-in-out 0.3s;
     --gap: 1.5rem;
@@ -52,7 +52,7 @@ h1 {
 
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--primary-color);
-    color: var(--primary-color);
+    color: var(--secondary-color);
 
     animation: infinite glitch;
     animation-duration: .5s;
@@ -60,17 +60,14 @@ h1 {
 
 @keyframes glitch {
     0%, 100% {
-        filter: hue-rotate(0deg);
         transform: skew(-1deg);
-        color: rbga (175, 36, 255, 1);
       }
       10%, 30%, 50%, 90% {
         transform: skew(0deg);
         color: rbga (175, 36, 255, 1);
       }
       40% {
-        transform: skew(-2deg);
-        color: rbga (175, 36, 255, .3);
+        transform: skew(-5deg);
       }
 }
 
@@ -89,9 +86,10 @@ em {
 }
 
 mark {
-    outline: var(--outline-stroke);
+    outline: var(--secondary-color) 1px solid;
     padding-left: 5px;
     padding-right: 5px;
+    color: var(--secondary-color);
 }
 
 footer {
@@ -110,7 +108,7 @@ footer {
 }
 
 .hover-effect:hover {
-    color: var(--tertiary-color);
+    color: var(--secondary-color);
     transition: var(--hover-effect);
 }
 
@@ -172,10 +170,10 @@ footer {
     height: 35vh;
 
     background-color:rgba(0, 0, 0, 0.7);
-    color: var(--tertiary-color);
+    color: var(--secondary-color);
     backdrop-filter: blur(10px);
 
-    outline: var(--tertiary-color) 1px solid;
+    outline: var(--secondary-color) 1px solid;
     padding: 5%;
     margin: auto;
 
@@ -214,17 +212,17 @@ footer {
 }
 
 .popup-window-close-button_yes, .popup-window-close-button_no {
-    outline: var(--tertiary-color) 1px solid;
+    outline: var(--secondary-color) 1px solid;
     width: 100%;
     height: 100%;
     padding: 2%;
     text-align: center;
-    color: var(--tertiary-color);
+    color: var(--secondary-color);
     cursor: pointer;
 }
 
 .popup-window-close-button_yes:hover, .popup-window-close-button_no:hover {
-    background-color: var(--tertiary-color);
+    background-color: var(--secondary-color);
     color: var(--background-color);
 }
 
@@ -248,7 +246,7 @@ footer {
     75% {
         opacity: 95%;
         transform: translate(1px, 2px);
-        color: var(--secondary-color);
+        color: var(--tertiary-color);
     }
 
     100% {
@@ -380,7 +378,7 @@ footer {
     line-height: 100%;
 
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--primary-color);
+    -webkit-text-stroke-color: var(--secondary-color);
     color: transparent;
 }
 
