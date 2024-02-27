@@ -27,7 +27,7 @@
 
     /* color styles */
     --background-color: #0D0208;
-    --primary-color: #af24ff;
+    --primary-color: rgb(175, 36, 255);
     --secondary-color: #E3E1D9;
     --tertiary-color: #00ff40;
 
@@ -415,6 +415,8 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-content: center;
+
+    background-color: 
 }
 
 .sidebar > div:first-child {
