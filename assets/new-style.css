@@ -525,11 +525,11 @@ mark {
     bottom: 0;
 }
 
-.block div {
+.block section {
     display: none;
 }
 
-.block.active div {
+.block.active section {
     width: 55vw;
     height: fit-content;
 
@@ -552,28 +552,43 @@ mark {
 .block.active > .arena-popup {
     display: flex;
     flex-direction: column;
+    align-content: center;
 }
 
-.block.active > .arena-popup > img {
+.block.active > .arena-popup > p:first-child {
+    
+}
+
+.block.active > .arena-popup > div:nth-child(2) {
+    width: 100%;
+    height: 100%;
     border-bottom: var(--secondary-color) 1px solid;
     padding: 2%;
+
+    display: flex;
+    justify-content: center;
 }
 
-.block.active > .arena-popup > ul {
+.block.active > .arena-popup > div:nth-child(2) > img {
+    width: fit-content;
+    height: 50vh;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.block.active > .arena-popup > div:nth-child(3) {
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 100%;
 }
 
-.block.active > .arena-popup > ul > li {
+.block.active > .arena-popup > div:nth-child(3) > p {
     width: 100%; 
     height: 100%;
     border-right: var(--secondary-color) 1px solid;
     padding: 2%;
-}
-
-.block.active > .arena-popup > ul > li > p {
     text-transform: uppercase;
 }
 
@@ -584,6 +599,11 @@ mark {
     background-color: var(--secondary-color);
     color: var(--background-color);
     cursor: pointer;
+}
+
+.click-button_close:hover {
+    font-family: var(--heading-font);
+    transition: var(--hover-effect);
 }
 
 

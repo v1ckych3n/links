@@ -56,29 +56,29 @@ let renderBlock = (block) => {
 		console.log(block)
 		let imageItem = 
 			`
-				<li class="block block-image">
+				<li class="block">
 					<figure>
 						<img src="${block.image.large.url}">
 					</figure>
 					<button class="click-button_open">&#11297;</button>
-					<div class="arena-popup">
-						<img src="${block.image.large.url}">
-						<ul>
-							<li>
-								<p>connected at</p>
-								${block.connected_at}
-							</li>
-							<li>
-								<p>created at</p>
-								${block.created_at}
-							</li>
-							<li>
-								<p>connected by</p>
-								${block.connected_by_username}
-							</li>
-						</ul>
+					<section class="arena-popup">
+						<p>Media Detail</p>
+						<div>
+							<img src="${block.image.large.url}">
+						</div>
+						<div>
+							<p>
+								connected at ${block.connected_at}
+							</p>
+							<p>
+								created at ${block.created_at}
+							</p>
+							<p>
+								connected by ${block.connected_by_username}
+							</p>
+						</div>
 						<button class="click-button_close">EXIT</button>
-					</div> 
+					</section> 
 				</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend',imageItem)
