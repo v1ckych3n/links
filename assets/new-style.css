@@ -27,7 +27,7 @@
 
     /* color styles */
     --background-color: #0D0208;
-    --primary-color: rgb(175, 36, 255);
+    --primary-color: #af24ff;
     --secondary-color: #00ff40;
     --tertiary-color: #E3E1D9;
 
@@ -111,7 +111,7 @@ mark {
 /* landing fixed banner */
 .fixed-banner {
     width: 100%;
-    height: 92vh;
+    height: 95vh;
     padding: 2% 3%;
 
     position: fixed;
@@ -403,6 +403,8 @@ mark {
     position: sticky;
     top: 2%;
     z-index: 2;
+    margin-top: 10%;
+    margin-bottom: 5%;
 
     display: flex;
     flex-direction: row;
@@ -444,7 +446,7 @@ mark {
     font-size: calc(var(--font-size) * 1.5);
     font-family: var(--heading-font);
     text-transform: uppercase;
-    border-left: var(--secondary-color) 1px solid;
+    border-left: var(--outline-stroke);
     display: flex;
     align-items: center;
     color: var(--secondary-color);
@@ -603,11 +605,6 @@ mark {
     cursor: pointer;
 }
 
-.click-button_close:hover {
-    font-family: var(--heading-font);
-    transition: var(--hover-effect);
-}
-
 
 
 /* .click-button_close:hover {
@@ -664,6 +661,10 @@ li {
 
 
     /* landing fixed banner */
+    .fixed-banner {
+        height: 92vh;
+    }
+
     .fixed-banner_closed-button {
         width: 3rem;
         height: 3rem;
@@ -701,7 +702,7 @@ li {
         flex-direction: row;
         align-items: center;
         height: fit-content;
-        justify-content: center;
+        justify-content: space-evenly;
     }
 
     .middle_fingerprint {
@@ -714,7 +715,6 @@ li {
     }
 
     .middle_outline-container > div:nth-child(2) > div:first-child {
-        border-right: var(--outline-stroke);
         border-bottom: none;
     }
     
@@ -735,15 +735,20 @@ li {
 
     .bottom_outline-container > div:nth-child(2) {
         display: block;
-        width: auto;
-        height: 100%;
+        width: 30vw;
+        height: auto;
         border-right: var(--outline-stroke);
     }
 
     .bottom_outline-container > div:nth-child(2) > img {
-        width: auto;
-        height: 100%;
+        width: 100%;
+        height: 30vh;
         padding: 4%;
+
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
     }
 
     .channel-count {
@@ -814,6 +819,8 @@ li {
         top: 2%;
         z-index: 2;
 
+        margin: 0;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -832,8 +839,7 @@ li {
     }
 
     .sidebar > div:nth-child(2) > p {
-        padding: 5%;
-        padding-right: 5%;
+        padding: 2% 5%;
         font-size: calc(var(--font-size) * 2.25);
         font-family: var(--heading-font);
         text-transform: uppercase;
@@ -844,9 +850,22 @@ li {
     .sidebar > div:nth-child(3) > p {
         display: block;
         padding: 5%;
-        line-height: 100%;
-        color: var(--secondary-color);
     }
+
+    #channel-description > p {
+        line-height: 120%;
+    }
+
+    .sidebar > button {
+        width: 100%;
+        padding: 2% 5%;
+        background-color: var(--primary-color);
+        color: var(--background-color);
+        font-family: var(--heading-font);
+        text-align: center;
+        text-transform: uppercase;
+    }
+
 
 
 
