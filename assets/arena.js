@@ -31,6 +31,7 @@ let placeChannelInfo = (data) => {
 // Then our big function for specific-block-type rendering:
 let renderBlock = (block) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
+	console.log(block)
 	let channelBlocks = document.getElementById('channel-blocks')
 
 	// Links!
@@ -46,7 +47,7 @@ let renderBlock = (block) => {
 					</figure>
 					<button class="click-button_open">&#11297;</button>
 					<section class="arena-popup">
-						<p>Media Detail</p>
+						<p>${block.generated_title}</p>
 						<div>
 							<img src="${block.image.large.url}">
 						</div>
@@ -73,7 +74,7 @@ let renderBlock = (block) => {
 					</figure>
 					<button class="click-button_open">&#11297;</button>
 					<section class="arena-popup">
-						<p>Media Detail</p>
+						<p>${block.generated_title}</p>
 						<div>
 							<img src="${block.image.large.url}">
 						</div>
@@ -102,7 +103,7 @@ let renderBlock = (block) => {
 					</blockquote>
 					<button class="click-button_open">&#11297;</button>
 					<section class="arena-popup">
-						<p>Media Detail</p>
+						<p>${block.generated_title}</p>
 						<div>
 							${block.content_html}
 						</div>
@@ -125,15 +126,18 @@ let renderBlock = (block) => {
 		// Uploaded videos!
 		if (attachment.includes('video')) {
 			// …still up to you, but we’ll give you the `video` element:
+	
 			let videoItem =
 				`
-					<li class="block>
-						<src="${ block.embed.html}"></src>
+					<li class="block">
+						<figure>
+							<img src="${block.image.large.url}">
+						</figure>
 						<button class="click-button_open">&#11297;</button>
 						<section class="arena-popup">
-							<p>Media Detail</p>
+							<p>${block.generated_title}</p>
 							<div>
-								<src="${ block.embed.html}"></src>
+								${ block.embed.html }
 							</div>
 							<div>
 								<p>connected at ${block.connected_at}</p>
@@ -155,14 +159,13 @@ let renderBlock = (block) => {
 			// …up to you!
 			let pdfItem = 
 				`
-				<li class="block>
-					<p><em>PDF</em></p>
-					<a href= ${block.attachment.url}></a>
-					<figure>
-						<img src=${block.image.large.url}></img>
-					</figure>
-					<button class="click-button_open">&#11297;</button>
-				</li>
+					<li class="block>
+						<a href= ${block.attachment.url}></a>
+						<figure>
+							<img src=${block.image.large.url}></img>
+						</figure>
+						<button class="click-button_open">&#11297;</button>
+					</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
 		}
@@ -172,11 +175,10 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an `audio` element:
 			let audioItem =
 				`
-				<li class="block">
-					<p><em>Audio</em></p>
-					<audio controls src="${ block.attachment.url }"></video>
-					<button class="click-button_open">&#11297;</button>
-				</li>
+					<li class="block">
+						<audio controls src="${ block.attachment.url }"></video>
+						<button class="click-button_open">&#11297;</button>
+					</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
 			// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
@@ -189,14 +191,27 @@ let renderBlock = (block) => {
 		// Linked video!
 		if (embed.includes('video')) {
 			// …still up to you, but here’s an example `iframe` element:
-	
+			
 			let linkedVideoItem =
 				`
-				<li class="block">
-					<p><em>Linked Video</em></p>
-					${ block.embed.html }
-					<button class="click-button_open">&#11297;</button>
-				</li>
+					<li class="block">
+						<figure>
+							<img src="${block.image.large.url}">
+						</figure>
+						<button class="click-button_open">&#11297;</button>
+						<section class="arena-popup">
+							<p>${block.generated_title}</p>
+							<div>
+								${block.embed.html}
+							</div>
+							<div>
+								<p>connected at ${block.connected_at}</p>
+								<p>created at ${block.created_at}</p>
+								<p>media connected by ${block.connected_by_username}</p>
+							</div>
+							<button class="click-button_close">EXIT</button>
+						</section>
+					</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend',linkedVideoItem)
 			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
@@ -205,13 +220,28 @@ let renderBlock = (block) => {
 		// Linked audio!
 		else if (embed.includes('rich')) {
 			// …up to you!
-			`
-			<li class="block">
-				<p><em>Audio</em></p>
-				${block.embed.html}
-				<button class="click-button_open">&#11297;</button>
-			</li>
-			`
+			let richItem =
+				`
+					<li class="block">
+						<figure>
+							<img src="${block.image.large.url}">
+						</figure>
+						<button class="click-button_open">&#11297;</button>
+						<section class="arena-popup">
+							<p>${block.generated_title}</p>
+							<div>
+								<a href="${ block.source.url }">${block.embed.html}</a>
+							</div>
+							<div>
+								<p>connected at ${block.connected_at}</p>
+								<p>created at ${block.created_at}</p>
+								<p>media connected by ${block.connected_by_username}</p>
+							</div>
+							<button class="click-button_close">EXIT</button>
+						</section>
+					</li>
+				`
+			channelBlocks.insertAdjacentHTML('beforeend', richItem)
 		}
 	}
 }
@@ -278,5 +308,9 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 				parentBlock.classList.toggle('active') // toggle the class
 			}
 		})
+
+		// Arena Video JavaScript 
+		let video = document.getElementById("myVideo");
+  		video.autoplay = true;
 		
 	})

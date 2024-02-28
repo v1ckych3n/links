@@ -121,7 +121,7 @@ mark {
     backdrop-filter: blur(10px);
     outline: var(--outline-stroke);
 
-    /* display: none; */
+    display: none;
 }
 
 .fixed-banner_closed-button {
@@ -501,13 +501,6 @@ mark {
     }
 }
 
-.block--text {
-    font-size: calc(var(--font-size) * 2.5);
-    font-weight: medium;
-    padding: 3%;
-    color: var(--background-color);
-}
-
 .click-button_open {
     width: 100%;
     text-align: center;
@@ -561,17 +554,18 @@ mark {
 
 .block.active > .arena-popup > div:nth-child(2) {
     width: 100%;
-    height: 100%;
+    height: 60vh;
     border-bottom: var(--secondary-color) 1px solid;
     padding: 2%;
 
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .block.active > .arena-popup > div:nth-child(2) > img {
     width: fit-content;
-    height: 50vh;
+    height: 100%;
 
     object-fit: cover;
     object-position: center;
@@ -590,6 +584,14 @@ mark {
     border-right: var(--secondary-color) 1px solid;
     padding: 2%;
     text-transform: uppercase;
+}
+
+.block .block--text {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    font-size: calc(var(--font-size) * 2.5);
+    font-weight: medium;
+    padding: 3%;
 }
 
 .click-button_close {
@@ -882,7 +884,7 @@ li {
         background-color: var(--primary-color);
     
         width: 100%;
-        height: fit-content;
+        height: 50vh;
         overflow: hidden;
     
         color: var(--primary-color);
@@ -890,12 +892,6 @@ li {
 
     .block:hover {
         outline: var(--secondary-color) 1px solid;
-        transition: var(--hover-effect);
-    }
-
-    .block--text:hover {
-        background-color: var(--secondary-color);
-        color: var(--background-color);
         transition: var(--hover-effect);
     }
 
