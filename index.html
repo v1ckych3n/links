@@ -18,7 +18,7 @@
         </div>
 
         <header id="myHeader" class="fixed-banner">
-            <div class="outline-container">
+            <div id="homeBanner" class="outline-container">
                 <div class="top_outline-container">
                     <h1>
                         <span class="hover-effect"><a href="#dsy">dys<span class="h1-bullet">&#8226;</span></a></span></span><span class="hover-effect">to<span class="h1-bullet">&#8226;</span></span><span class="hover-effect">pi<span class="h1-bullet">&#8226;</span></span><span class="hover-effect">a</span>
@@ -98,13 +98,16 @@
                 function closePopup(){
                     warningPopup.classList.remove("fixed-banner_popup-window");
                 }
+            </script>
 
-                let homeBanner = document.getElementById("myHeader");
+            <!-- can't seem to get this to work (next step)-->
+            <!-- <script>
+                let homeBanner = document.getElementById("homeBanner");
 
                 function openHeader(){
-                    homeBanner.classList.toggle("fixed-banner");
+                    homeBanner.classList.toggle("outline-container");
                 }
-            </script>
+            </script> -->
         </header>
 
         <main>

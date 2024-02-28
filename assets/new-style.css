@@ -122,6 +122,10 @@ mark {
     outline: var(--outline-stroke);
 }
 
+.fixed-banner.close {
+    display: none;
+}
+
 .fixed-banner_closed-button {
     width: 2rem;
     height: 2rem;
