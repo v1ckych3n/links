@@ -191,7 +191,7 @@ mark {
 
 .middle_fingerprint {
     width: 100%;
-    padding: 5%;
+    padding: 2%;
     color: var(--secondary-color);
 
     display: flex;
