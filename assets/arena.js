@@ -39,13 +39,25 @@ let renderBlock = (block) => {
 		/* for some reason, if the link JavaScript function is deleted then more images will show??? */
 		let linkItem =
 			`
-			<li class="block">
-				<p><em>Link</em></p>
-				<figure>
-					<img src="${ block.image.large.url }">
-				</figure>
-				<button class="click-button_open">&#11297;</button>
-			</li>
+				<li class="block">
+					<p><em>Link</em></p>
+					<figure>
+						<img src="${ block.image.large.url }">
+					</figure>
+					<button class="click-button_open">&#11297;</button>
+					<section class="arena-popup">
+						<p>Media Detail</p>
+						<div>
+							<img src="${block.image.large.url}">
+						</div>
+						<div>
+							<p>connected at ${block.connected_at}</p>
+							<p>created at ${block.created_at}</p>
+							<p>media connected by ${block.connected_by_username}</p>
+						</div>
+						<button class="click-button_close">EXIT</button>
+					</section> 
+				</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
@@ -53,7 +65,6 @@ let renderBlock = (block) => {
 	// Images!
 	else if (block.class == 'Image') {
 		// …up to you!
-		console.log(block)
 		let imageItem = 
 			`
 				<li class="block">
@@ -67,15 +78,9 @@ let renderBlock = (block) => {
 							<img src="${block.image.large.url}">
 						</div>
 						<div>
-							<p>
-								connected at ${block.connected_at}
-							</p>
-							<p>
-								created at ${block.created_at}
-							</p>
-							<p>
-								connected by ${block.connected_by_username}
-							</p>
+							<p>connected at ${block.connected_at}</p>
+							<p>created at ${block.created_at}</p>
+							<p>media connected by ${block.connected_by_username}</p>
 						</div>
 						<button class="click-button_close">EXIT</button>
 					</section> 
@@ -86,15 +91,29 @@ let renderBlock = (block) => {
 
 	// Text!
 	else if (block.class == 'Text') {
+		
 		// …up to you!
 		let textItem =
 		/* can't seem to pull in my text block */
 			`
-			<li class="block block--text">
-				<blockquote>
-					${block.content_html}
-				</blockquote>
-			</li>
+				<li class="block block--text">
+					<blockquote>
+						${block.content_html}
+					</blockquote>
+					<button class="click-button_open">&#11297;</button>
+					<section class="arena-popup">
+						<p>Media Detail</p>
+						<div>
+							${block.content_html}
+						</div>
+						<div>
+							<p>connected at ${block.connected_at}</p>
+							<p>created at ${block.created_at}</p>
+							<p>media connected by ${block.connected_by_username}</p>
+						</div>
+						<button class="click-button_close">EXIT</button>
+					</section> 
+				</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend',textItem)
 	}
@@ -106,14 +125,24 @@ let renderBlock = (block) => {
 		// Uploaded videos!
 		if (attachment.includes('video')) {
 			// …still up to you, but we’ll give you the `video` element:
-			channel.log(block)
 			let videoItem =
 				`
-				<li class="block>
-					<p><em>Video</em></p>
-					<src="${ block.embed.html }"></src>
-					<button class="click-button_open">&#11297;</button>
-				</li>
+					<li class="block>
+						<src="${ block.embed.html}"></src>
+						<button class="click-button_open">&#11297;</button>
+						<section class="arena-popup">
+							<p>Media Detail</p>
+							<div>
+								<src="${ block.embed.html}"></src>
+							</div>
+							<div>
+								<p>connected at ${block.connected_at}</p>
+								<p>created at ${block.created_at}</p>
+								<p>media connected by ${block.connected_by_username}</p>
+							</div>
+							<button class="click-button_close">EXIT</button>
+						</section>
+					</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
 
@@ -223,6 +252,12 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		document.getElementById("closeMyHeader").addEventListener("click", function() {
 			let header = document.getElementById("myHeader");
 			header.parentNode.removeChild(header);
+		});
+
+		// sidebar return "home" button (doesn't work yet)
+		document.getElementById("openMyHeader").addEventListener("click", function() {
+			let header = document.getElementById("myHeader");
+			header.classList.toggle(header);
 		});
 
 		// Arena Pop-up buttons
