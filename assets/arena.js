@@ -47,7 +47,7 @@ let renderBlock = (block) => {
 					</figure>
 					<button class="click-button_open">&#11297;</button>
 					<section class="arena-popup">
-						<p>${block.generated_title}</p>
+						<p><a href="${block.source.url}">${block.generated_title} &#10228;</a></p>
 						<div>
 							<img src="${block.image.large.url}">
 						</div>
@@ -135,7 +135,7 @@ let renderBlock = (block) => {
 						</figure>
 						<button class="click-button_open">&#11297;</button>
 						<section class="arena-popup">
-							<p>${block.generated_title}</p>
+							<p><a href="${block.source.url}">${block.generated_title} &#10228;</a></p>
 							<div>
 								${ block.embed.html }
 							</div>
@@ -157,14 +157,26 @@ let renderBlock = (block) => {
 		// Uploaded PDFs!
 		else if (attachment.includes('pdf')) {
 			// …up to you!
+			
 			let pdfItem = 
 				`
-					<li class="block>
-						<a href= ${block.attachment.url}></a>
+					<li class="block">
 						<figure>
 							<img src=${block.image.large.url}></img>
 						</figure>
 						<button class="click-button_open">&#11297;</button>
+						<section class="arena-popup">
+							<p><a href="${block.attachment.url}">${block.generated_title} &#10228;</a></p>
+							<div>
+								<img src="${block.image.large.url}">
+							</div>
+							<div>
+								<p>connected at ${block.connected_at}</p>
+								<p>created at ${block.created_at}</p>
+								<p>media connected by ${block.connected_by_username}</p>
+							</div>
+							<button class="click-button_close">EXIT</button>
+						</section>
 					</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
@@ -200,7 +212,7 @@ let renderBlock = (block) => {
 						</figure>
 						<button class="click-button_open">&#11297;</button>
 						<section class="arena-popup">
-							<p>${block.generated_title}</p>
+							<p><a href="${block.source.url}">${block.generated_title} &#10228;</a></p>
 							<div>
 								${block.embed.html}
 							</div>
@@ -228,7 +240,7 @@ let renderBlock = (block) => {
 						</figure>
 						<button class="click-button_open">&#11297;</button>
 						<section class="arena-popup">
-							<p>${block.generated_title}</p>
+							<p><a href="${block.source.url}">${block.generated_title} &#10228;</a></p>
 							<div>
 								<a href="${ block.source.url }">${block.embed.html}</a>
 							</div>
