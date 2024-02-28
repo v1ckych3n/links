@@ -98,6 +98,12 @@
                 function closePopup(){
                     warningPopup.classList.remove("fixed-banner_popup-window");
                 }
+
+                let homeBanner = document.getElementById("myHeader");
+
+                function openHeader(){
+                    homeBanner.classList.toggle("outline-container");
+                }
             </script>
         </header>
 
@@ -113,7 +119,7 @@
                     <div>
                         <p id="channel-description"></p>
                     </div>
-                    <button id="openMyHeader">&#10039;<span>Home</span></button>
+                    <button id="openMyHeader" onclick="openHeader()">&#10039;<span>Home</span></button>
                 </div>
                 <ul class="block-grid" id="channel-blocks"></ul>
             </section>

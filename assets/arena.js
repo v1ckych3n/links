@@ -296,11 +296,11 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			header.parentNode.removeChild(header);
 		});
 
-		// sidebar return "home" button (doesn't work yet)
-		document.getElementById("openMyHeader").addEventListener("click", function() {
-			let header = document.getElementById("myHeader");
-			header.classList.toggle(header);
-		});
+		// sidebar return "home" button (doesn't work yet????)
+		// document.getElementById("openMyHeader").addEventListener("click", function() {
+		// 	let header = document.getElementById("myHeader");
+		// 	header.classList.toggle("myHeader");
+		// });
 
 		// Arena Pop-up buttons
 		let openPopups = document.querySelectorAll('.click-button_open')
@@ -320,9 +320,5 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 				parentBlock.classList.toggle('active') // toggle the class
 			}
 		})
-
-		// Arena Video JavaScript 
-		let video = document.getElementById("myVideo");
-  		video.autoplay = true;
 		
 	})
