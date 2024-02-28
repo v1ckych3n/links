@@ -403,8 +403,8 @@ mark {
     margin-bottom: 5%;
 
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     align-content: center;
 
     background:rgba(0, 0, 0, 0.7);
@@ -437,18 +437,35 @@ mark {
 }
 
 .sidebar > div:nth-child(2) > p {
-    padding: 5%;
+    padding-right: 1%;
     height: 100%;
     font-size: calc(var(--font-size) * 1.5);
     font-family: var(--heading-font);
     text-transform: uppercase;
-    border-left: var(--outline-stroke);
+    border-right: var(--outline-stroke);
     display: flex;
     align-items: center;
     color: var(--secondary-color);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--primary-color);
 }
 
 .sidebar > div:nth-child(3) > p {
+    display: none;
+}
+
+.sidebar > button {
+    width: 3rem;
+    padding: 2% 2%;
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    text-align: center;
+    text-transform: uppercase;
+    outline: var(--outline-stroke);
+    font-size: calc(var(--font-size) * 1.5);
+}
+
+.sidebar > button > span {
     display: none;
 }
 
@@ -502,15 +519,15 @@ mark {
 }
 
 .click-button_open {
-    width: 100%;
+    width: fit-content;
     text-align: center;
-
-    color: var(--secondary-color);
     padding: 1% 2%;
     outline: var(--secondary-color) 1px solid;
     backdrop-filter: blur(10px);
     font-size: calc(var(--font-size) * 1.5);
 
+    color: var(--background-color);
+    background-color: var(--secondary-color);
     position: absolute;
     bottom: 0;
 }
@@ -520,7 +537,7 @@ mark {
 }
 
 .block.active section {
-    width: 55vw;
+    width: 85vw;
     height: fit-content;
 
     background-color:rgba(0, 0, 0, 0.7);
@@ -529,13 +546,12 @@ mark {
 
     outline: var(--secondary-color) 1px solid;
     margin: auto;
-    margin-left: 10%;
 
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
-    left: 25rem;
+    left: 0;
     z-index: 10;
 }
 
@@ -546,20 +562,19 @@ mark {
 }
 
 .block.active > .arena-popup > p:first-child {
-    font-size: calc(var(--font-size) * 2);
+    font-size: calc(var(--font-size) * 1.5);
     text-transform: uppercase;
     border-bottom: var(--secondary-color) 1px solid;
     padding: 2%;
 }
 
-.block.active > .arena-popup > p:first-child > a:hover {
-    color: rgb(0, 255, 255);
-    transition: var(--hover-effect);
+.block.active > .arena-popup > p:first-child > a {
+    text-decoration: underline;
 }
 
 .block.active > .arena-popup > div:nth-child(2) {
     width: 100%;
-    height: 60vh;
+    height: 40vh;
     border-bottom: var(--secondary-color) 1px solid;
     padding: 2%;
 
@@ -578,7 +593,7 @@ mark {
 
 .block.active > .arena-popup > div:nth-child(3) {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     height: 100%;
 }
@@ -586,7 +601,7 @@ mark {
 .block.active > .arena-popup > div:nth-child(3) > p {
     width: 100%; 
     height: 100%;
-    border-right: var(--secondary-color) 1px solid;
+    border-bottom: var(--secondary-color) 1px solid;
     padding: 2%;
     text-transform: uppercase;
 }
@@ -847,6 +862,7 @@ li {
         text-transform: uppercase;
         border-left: none;
         border-bottom: var(--outline-stroke);
+        flex-wrap: nowrap;
     }
 
     .sidebar > div:nth-child(3) > p {
@@ -859,15 +875,16 @@ li {
     }
 
     .sidebar > button {
-        width: 100%;
         padding: 2% 5%;
+        width: 100%;
         background-color: var(--primary-color);
-        color: var(--background-color);
-        font-family: var(--heading-font);
         text-align: center;
         text-transform: uppercase;
-        outline: var(--outline-stroke);
         cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
     }
 
     .sidebar > button:hover {
@@ -875,7 +892,9 @@ li {
         transition: var(--hover-effect);
     }
 
-
+    .sidebar > button > span {
+        display: block;
+    }
 
 
     /* JavaScript styles */
@@ -899,12 +918,24 @@ li {
         transition: var(--hover-effect);
     }
 
+    .block > figure > img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: top center;
+        transition: var(--hover-effect);
+        mix-blend-mode: luminosity;
+        animation: moving 4s ease-in-out infinite;
+    }
+
     .click-button_open {
         width: fit-content;
         cursor: pointer;
         font-size: calc(var(--font-size) * 1.5);
         padding: 1% 2%;
         outline: var(--outline-stroke);
+        color: var(--background-color);
     }
 
     .click-button_open:hover {
@@ -915,4 +946,48 @@ li {
         color: var(--background-color);
         background-color: var(--secondary-color);
     }
+
+    .block.active section {
+        width: 55vw;
+    
+        margin-left: 10%;
+    
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 25rem;
+        z-index: 10;
+    }
+
+    .block.active > .arena-popup > p:first-child {
+        font-size: calc(var(--font-size) * 2);
+    }
+
+    .block.active > .arena-popup > p:first-child > a {
+        text-decoration: none;
+    }
+
+    .block.active > .arena-popup > p:first-child > a:hover {
+        color: rgb(0, 255, 255);
+        transition: var(--hover-effect);
+    }
+
+    .block.active > .arena-popup > div:nth-child(2) {
+        height: 60vh;
+    }
+
+    .block.active > .arena-popup > div:nth-child(3) {
+        flex-direction: row;
+    }
+
+    .block.active > .arena-popup > div:nth-child(3) > p {
+        border-bottom: none;
+        border-right: var(--secondary-color) 1px solid;
+    }
+
+    .click-button_close {
+        cursor: pointer;
+    }
+
 }
