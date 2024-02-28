@@ -120,8 +120,6 @@ mark {
     background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
     outline: var(--outline-stroke);
-
-    display: none;
 }
 
 .fixed-banner_closed-button {
